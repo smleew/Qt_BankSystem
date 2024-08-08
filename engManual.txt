@@ -1,0 +1,26 @@
+[English Manual]
+
+1. Login
+- Log in by entering your existing user ID and password.
+
+2. Sign Up
+- Complete the sign-up process by entering a new user ID and password.
+
+=============================================================================
+
+1. Check Account
+- View all the account information of the user.
+
+2. Open Account
+- Open a new account by entering the initial deposit amount and a password.
+
+3. Deposit
+- Select the account and amount to deposit money.
+
+4. Withdraw
+- Select the account and amount to withdraw money and enter the password.
+
+5. Transfer
+- Transfer money by entering the account to transfer from, the amount, and the recipient's account number.
+
+=============================================================================
