@@ -1,13 +1,13 @@
-#include "bank.h"
+#include "bank1.h"
 #include "fileManager.h"
 using namespace std;
 
-int main()
+int main1()
 {
 	cout << "[은행 업무 메뉴얼 : Bank System Manual]" << endl;
-	cout << "언어를 선택하십시오. : Choose Language" << endl;
-	cout << "1. 한국어" << endl;
-	cout << "2. English" << endl;
+    cout << "언어를 선택하십시오. : Choose Language" << endl;
+    // cout << "1. 한국어" << endl;
+    // cout << "2. English" << endl;
 	cout << ">> ";
 
 	int select;
@@ -25,7 +25,7 @@ int main()
 	fileManager.printManual(fileName);
 
 	Bank bank;
-	bank.bankService();
+    bank.bankService();
 
 	return 0;
 }

@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <random>
 #include <limits>
-#include "bank.h"
+#include "bank1.h"
 #define LL long long
 #define CUR_USER users[curUserIdx]
 #define CUR_ACC CUR_USER.getAccounts()
@@ -39,21 +39,21 @@ void Bank::bankService() {		//은행업무
 			}
 		}
 
-		cout << endl << "[업무 선택]" << endl;
-		cout << left << setw(20) << "1. 계좌 조회";
-		cout << left << setw(20) << "1. Check Account" << endl;
-		cout << left << setw(20) << "2. 계좌 개설";
-		cout << left << setw(20) << "2. Open Account" << endl;
-		cout << left << setw(20) << "3. 입금";
-		cout << left << setw(20) << "3. Deposit" << endl;
-		cout << left << setw(20) << "4. 출금";
-		cout << left << setw(20) << "4. Withdraw" << endl;
-		cout << left << setw(20) << "5. 이체";
-		cout << left << setw(20) << "5. Transfer" << endl;
-		cout << left << setw(20) << "6. 로그아웃";
-		cout << left << setw(20) << "6. Logout" << endl;
-		cout << left << setw(20) << "7. 종료";
-		cout << left << setw(20) << "7. Exit" << endl;
+        // cout << endl << "[업무 선택]" << endl;
+        // cout << left << setw(20) << "1. 계좌 조회";
+        // cout << left << setw(20) << "1. Check Account" << endl;
+        // cout << left << setw(20) << "2. 계좌 개설";
+        // cout << left << setw(20) << "2. Open Account" << endl;
+        // cout << left << setw(20) << "3. 입금";
+        // cout << left << setw(20) << "3. Deposit" << endl;
+        // cout << left << setw(20) << "4. 출금";
+        // cout << left << setw(20) << "4. Withdraw" << endl;
+        // cout << left << setw(20) << "5. 이체";
+        // cout << left << setw(20) << "5. Transfer" << endl;
+        // cout << left << setw(20) << "6. 로그아웃";
+        // cout << left << setw(20) << "6. Logout" << endl;
+        // cout << left << setw(20) << "7. 종료";
+        // cout << left << setw(20) << "7. Exit" << endl;
 		cout << ">> ";
 		cin >> selection;
 		switch (selection) {

@@ -1,8 +1,0 @@
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/Qt_BankSystem.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/install.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/install/local.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/Qt_BankSystem_autogen_timestamp_deps.dir
-C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/Qt_BankSystem_autogen.dir

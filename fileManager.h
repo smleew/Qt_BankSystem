@@ -4,7 +4,6 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
-#include "bank.h"
 using namespace std;
 
 class FileManager {
