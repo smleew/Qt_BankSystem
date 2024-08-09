@@ -466,6 +466,9 @@ void Bank::btnMakeAccount() {
     CUR_USER.addAccount(id, input, pw);
     idToAccPtr[id] = &(CUR_ACC.back());
     // cout << "* 계좌 개설 완료 *" << endl;
-   // QString tmp = "[계좌 개설 완료]\n계좌번호: %1\n잔액: %2원\n비밀번호: %3\n".arg(id, initMoney, pw);
-//qDebug() << tmp;
+    QString tmp = "[계좌 개설 완료]\n계좌번호: %1\n잔액: %2원\n비밀번호: %3\n";
+    tmp = tmp.arg(QString::number(id)).arg(initMoney).arg(pw);
+    qDebug() << tmp;
+    ui->info_makeAccount->setPlainText(tmp);
+
 }
