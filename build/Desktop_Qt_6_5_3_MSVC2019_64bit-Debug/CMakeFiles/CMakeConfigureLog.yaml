@@ -63,8 +63,13 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
+<<<<<<< Updated upstream
       source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-8mrc77"
       binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-8mrc77"
+=======
+      source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-2k4fsi"
+      binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-2k4fsi"
+>>>>>>> Stashed changes
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -74,11 +79,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
+<<<<<<< Updated upstream
         Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-8mrc77'
         
         Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_a97c2
         [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_a97c2.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_a97c2.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp
         [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_a97c2.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_a97c2.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_a97c2.exe /implib:cmTC_a97c2.lib /pdb:cmTC_a97c2.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+=======
+        Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-2k4fsi'
+        
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_ac91c
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -MDd /showIncludes /FoCMakeFiles\\cmTC_ac91c.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_ac91c.dir\\ /FS -c C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_ac91c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_ac91c.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_ac91c.exe /implib:cmTC_ac91c.lib /pdb:cmTC_ac91c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+>>>>>>> Stashed changes
         
       exitCode: 0
   -
@@ -124,8 +137,13 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
+<<<<<<< Updated upstream
       source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-be2wes"
       binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-be2wes"
+=======
+      source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-9iowi8"
+      binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-9iowi8"
+>>>>>>> Stashed changes
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -135,6 +153,7 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
+<<<<<<< Updated upstream
         Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-be2wes'
         
         Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_00daa
@@ -142,6 +161,15 @@ events:
         \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_00daa.dir/src.cxx.obj 
         C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_00daa.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_00daa.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-be2wes\\src.cxx
         C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-be2wes\\src.cxx(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'pthread.h': No such file or directory
+=======
+        Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-9iowi8'
+        
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_c3e2b
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_c3e2b.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_c3e2b.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-9iowi8\\src.cxx
+        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_c3e2b.dir/src.cxx.obj 
+        C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_c3e2b.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_c3e2b.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-9iowi8\\src.cxx
+        C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-9iowi8\\src.cxx(1): fatal error C1083: 포함 파일을 열 수 없습니다. 'pthread.h': No such file or directory
+>>>>>>> Stashed changes
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -159,8 +187,13 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
+<<<<<<< Updated upstream
       source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-wf7sht"
       binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-wf7sht"
+=======
+      source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-8zdoih"
+      binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-8zdoih"
+>>>>>>> Stashed changes
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -170,6 +203,7 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
+<<<<<<< Updated upstream
         Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-wf7sht'
         
         Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_1b9e4
@@ -178,6 +212,16 @@ events:
         \x1b[31mFAILED: \x1b[0mcmTC_1b9e4.exe 
         C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_1b9e4.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1b9e4.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_1b9e4.exe /implib:cmTC_1b9e4.lib /pdb:cmTC_1b9e4.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1b9e4.dir\\CheckFunctionExists.cxx.obj /out:cmTC_1b9e4.exe /implib:cmTC_1b9e4.lib /pdb:cmTC_1b9e4.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_1b9e4.dir/intermediate.manifest CMakeFiles\\cmTC_1b9e4.dir/manifest.res" failed (exit code 1104) with the following output:
+=======
+        Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-8zdoih'
+        
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_b7d4c
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_b7d4c.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_b7d4c.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-8zdoih\\CheckFunctionExists.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_b7d4c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_b7d4c.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_b7d4c.exe /implib:cmTC_b7d4c.lib /pdb:cmTC_b7d4c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        \x1b[31mFAILED: \x1b[0mcmTC_b7d4c.exe 
+        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_b7d4c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_b7d4c.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_b7d4c.exe /implib:cmTC_b7d4c.lib /pdb:cmTC_b7d4c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_b7d4c.dir\\CheckFunctionExists.cxx.obj /out:cmTC_b7d4c.exe /implib:cmTC_b7d4c.lib /pdb:cmTC_b7d4c.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_b7d4c.dir/intermediate.manifest CMakeFiles\\cmTC_b7d4c.dir/manifest.res" failed (exit code 1104) with the following output:
+>>>>>>> Stashed changes
         LINK : fatal error LNK1104: 'pthreads.lib' 파일을 열 수 없습니다.\x0d
         ninja: build stopped: subcommand failed.
         
@@ -196,8 +240,13 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
+<<<<<<< Updated upstream
       source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-9o0ch3"
       binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-9o0ch3"
+=======
+      source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-6zatny"
+      binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-6zatny"
+>>>>>>> Stashed changes
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -207,6 +256,7 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
+<<<<<<< Updated upstream
         Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-9o0ch3'
         
         Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_11e4c
@@ -215,6 +265,16 @@ events:
         \x1b[31mFAILED: \x1b[0mcmTC_11e4c.exe 
         C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_11e4c.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_11e4c.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_11e4c.exe /implib:cmTC_11e4c.lib /pdb:cmTC_11e4c.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_11e4c.dir\\CheckFunctionExists.cxx.obj /out:cmTC_11e4c.exe /implib:cmTC_11e4c.lib /pdb:cmTC_11e4c.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_11e4c.dir/intermediate.manifest CMakeFiles\\cmTC_11e4c.dir/manifest.res" failed (exit code 1104) with the following output:
+=======
+        Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-6zatny'
+        
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_39637
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP   -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_39637.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_39637.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-6zatny\\CheckFunctionExists.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_39637.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_39637.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_39637.exe /implib:cmTC_39637.lib /pdb:cmTC_39637.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        \x1b[31mFAILED: \x1b[0mcmTC_39637.exe 
+        C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_39637.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_39637.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_39637.exe /implib:cmTC_39637.lib /pdb:cmTC_39637.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_39637.dir\\CheckFunctionExists.cxx.obj /out:cmTC_39637.exe /implib:cmTC_39637.lib /pdb:cmTC_39637.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_39637.dir/intermediate.manifest CMakeFiles\\cmTC_39637.dir/manifest.res" failed (exit code 1104) with the following output:
+>>>>>>> Stashed changes
         LINK : fatal error LNK1104: 'pthread.lib' 파일을 열 수 없습니다.\x0d
         ninja: build stopped: subcommand failed.
         
@@ -238,8 +298,13 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
+<<<<<<< Updated upstream
       source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-yjiw4q"
       binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-yjiw4q"
+=======
+      source: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-16heau"
+      binary: "C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-16heau"
+>>>>>>> Stashed changes
     cmakeVariables:
       CMAKE_CXX_FLAGS: "-DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -249,11 +314,19 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
+<<<<<<< Updated upstream
         Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-yjiw4q'
         
         Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_9b4f8
         [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_9b4f8.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_9b4f8.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-yjiw4q\\src.cxx
         [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_9b4f8.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_9b4f8.dir\\src.cxx.obj  /out:cmTC_9b4f8.exe /implib:cmTC_9b4f8.lib /pdb:cmTC_9b4f8.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+=======
+        Change Dir: 'C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/CMakeFiles/CMakeScratch/TryCompile-16heau'
+        
+        Run Build Command(s): C:/PROGRA~1/MIB055~1/2022/COMMUN~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe -v cmTC_a67be
+        [1/2] C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\HostX64\\x64\\cl.exe  /nologo /TP -DHAVE_STDATOMIC  -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /GR /EHsc  /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd /showIncludes /FoCMakeFiles\\cmTC_a67be.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_a67be.dir\\ /FS -c C:\\Users\\smlee\\Documents\\Qt\\Qt_BankSystem\\build\\Desktop_Qt_6_5_3_MSVC2019_64bit-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-16heau\\src.cxx
+        [2/2] C:\\Windows\\system32\\cmd.exe /C "cd . && C:\\Qt\\Tools\\CMake_64\\bin\\cmake.exe -E vs_link_exe --intdir=CMakeFiles\\cmTC_a67be.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100226~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1440~1.338\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_a67be.dir\\src.cxx.obj  /out:cmTC_a67be.exe /implib:cmTC_a67be.lib /pdb:cmTC_a67be.pdb /version:0.0 /machine:x64  /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+>>>>>>> Stashed changes
         
       exitCode: 0
 ...

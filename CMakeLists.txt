@@ -23,22 +23,31 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Qt_BankSystem
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+<<<<<<< Updated upstream
 
 
 
 
+=======
+        bank1.h fileManager.h user.h
+        bank1.cpp  main1.cpp user.cpp
+>>>>>>> Stashed changes
         account.h
         bank.h
         bank1.h
         fileManager.h
         user.h
         account.cpp
+<<<<<<< Updated upstream
         bank.cpp
         bank1.cpp
         fileManager.cpp
         main.cpp
         main1.cpp
         user.cpp
+=======
+        fileManager.cpp
+>>>>>>> Stashed changes
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Qt_BankSystem APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
