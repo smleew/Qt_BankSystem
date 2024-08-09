@@ -34,6 +34,9 @@ void Bank::linkButtons() {
 
     connect(ui->btn_withdraw, SIGNAL(clicked()), this, SLOT(btnWithdraw()));
     connect(ui->btn_withdrawAccountList, SIGNAL(clicked()), this, SLOT(btnWithdrawAccountList()));
+
+    connect(ui->btn_transfer, SIGNAL(clicked()), this, SLOT(btnTransfer()));
+    connect(ui->btn_transferAccountList, SIGNAL(clicked()), this, SLOT(btnTransferAccountList()));
 }
 
 bool Bank::checkCurUser(const QString& id, const QString& pw) {
@@ -44,40 +47,6 @@ bool Bank::checkCurUser(const QString& id, const QString& pw) {
         return false;
     }
     return true;
-}
-
-void Bank::makeAccount() {
-    long long input = 0, id = 0;
-    QString pw = "", name = "";
-
-    random_device rd;
-    mt19937_64 gen(rd());
-    uniform_int_distribution<long long> dis(numeric_limits<long long>::min(), numeric_limits<long long>::max());
-    id = abs(dis(gen) % 100000000000000);
-    while (idToAccPtr.find(id) != idToAccPtr.end()) { // id 중복 방지
-        id = dis(gen) % 100000000000000;
-        id = abs(id);
-    }
-    // cout << endl << "[계좌 개설]" << endl;
-    // cout << "초기 입금액 입력 (-1 : 취소)" << endl;
-    // cout << ">> ";
-    // cin >> input;
-    if (input == -1) {
-        // cout << "* 계좌 개설 취소 *" << endl;
-        return;
-    }
-
-    // cout << "비밀번호 입력 (-1 : 취소)" << endl;
-    // cout << ">> ";
-    // cin >> pw;
-    if (pw == "-1") {
-        // cout << "- 계좌 개설을 취소합니다. -" << endl;
-        return;
-    }
-
-    CUR_USER.addAccount(id, input, pw);
-    idToAccPtr[id] = &(CUR_ACC.back());
-    // cout << "* 계좌 개설 완료 *" << endl;
 }
 
 void Bank::loginSystem() {
@@ -156,175 +125,6 @@ void Bank::signIn() {
             break;
         }
     }
-}
-
-
-void Bank::checkAccount() {	//계좌조회
-    if (CUR_ACC.empty()) {
-        // cout << "* 계좌 없음 *" << endl;
-        // cout << "- 계좌를 개설해주세요. -" << endl;
-    }
-    else {
-        for (int i = 0; i < CUR_ACC.size(); i++) {
-            // cout << endl;
-            // cout << "[" << i + 1 << "번 계좌]";
-            CUR_ACC[i].printAccountInfo();
-        }
-    }
-}
-
-void Bank::withdraw() {	//출금
-    int selection = 0;
-    LL output = 0;
-    QString pw = "";
-    while (selection != -1) {
-        checkAccount();
-        // cout << endl << "출금할 계좌 선택 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> selection;
-        if (selection == -1) {
-            // cout << "* 출금 취소 *" << endl;
-            return;
-        }
-        else if (selection <= CUR_ACC.size()) {
-            // cout << selection << "번 계좌가 선택되었습니다." << endl;
-            selection--;
-            break;
-        }
-        else {
-            // cout << "* 잘못된 숫자 입력 *" << endl;
-            // cout << "- 다시 입력해주세요. -" << endl;
-        }
-    }
-
-    while (1) {
-        // cout << endl << "계좌 비밀번호 입력 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> pw;
-        if (pw == "-1") {
-            // cout << "* 출금 취소 *" << endl;
-            return;
-        }
-        // else if (CUR_ACC[selection].getPw() == pw) {
-        //     break;
-        // }
-        else {
-            // cout << "* 잘못된 비밀번호 *" << endl;
-            // cout << "- 다시 입력해주세요. -" << endl;
-        }
-    }
-
-    while (1) {
-        // cout << endl << "출금할 금액 입력 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> output;
-        if (output == -1) {
-            // cout << "* 출금 취소 *" << endl;
-            return;
-        }
-        if (output > 0) {
-            break;
-        }
-        else {
-            // cout << "- 양의 정수를 입력해주세요. -" << endl;
-        }
-    }
-
-    if (CUR_ACC[selection].subBalance(output)) {// 입금
-        // cout << "* 출금 성공 *" << endl;
-        // cout << "- 현재 잔액 : " << CUR_ACC[selection].getBalance() << "원 -" << endl;
-    }
-    else {
-        // cout << "* 출금 실패 *" << endl;
-    }
-}
-
-void Bank::sendMoney() {
-    int selection = 0;
-    LL dest = 0, money = 0;
-    QString pw = "";
-    while (selection != -1) {
-        checkAccount();
-        // cout << endl << "이체할 계좌 선택 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> selection;
-        if (selection <= CUR_ACC.size()) {
-            // cout << selection << "번 계좌가 선택되었습니다." << endl;
-            selection--;
-            break;
-        }
-        else if (selection == -1) {
-            // cout << "* 이체 취소 *" << endl;
-            return;
-        }
-        else {
-            // cout << "* 잘못된 숫자 입력 *" << endl;
-            // cout << "- 다시 입력해주세요. -" << endl;
-        }
-    }
-
-    while (1) {
-        // cout << endl << "비밀번호 입력 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> pw;
-        if (pw == "-1") {
-            // cout << "* 이체 취소 *" << endl;
-            return;
-        }
-        // else if (CUR_ACC[selection].getPw() == pw) {
-        //     break;
-        // }
-        else {
-            // cout << "* 잘못된 비밀번호 *" << endl;
-            // cout << "- 다시 입력해주세요. -" << endl;
-        }
-    }
-
-    while (1) {
-        // cout << endl << "이체 받을 계좌번호 입력 (14자리) (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> dest;
-        if (dest == -1) {
-            // cout << "* 이체 취소 *" << endl;
-            return;
-        }
-        if (dest < 10000000000000 || dest >= 100000000000000) {
-            // cout << "* 잘못된 계좌번호 형식 *" << endl;
-            // cout << "- 14자리의 계좌번호를 입력해 주십시오. -" << endl << endl;
-        }
-        else if(idToAccPtr.find(dest) == idToAccPtr.end()) {
-            // cout << "* 존재하지 않는 계좌 *" << endl;
-            // cout << "- 다시 입력해주세요. -" << endl << endl;
-        }
-        else {
-            break;
-        }
-    }
-    while (1) {
-        // cout << endl << "이체할 금액 입력 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> money;
-        if (money == -1) {
-            // cout << "* 이체 취소 *" << endl;
-            return;
-        }
-        if (money <= 0) {
-            // cout << "* 금액 형식 오류 *" << endl;
-            // cout << "양의 정수로 입력해 주십시오." << endl << endl;
-        }
-        else if (money > CUR_ACC[selection].getBalance()) {
-            // cout << "* 잔액을 초과하여 이체할 수 없습니다. *" << endl;
-            // cout << "현재 잔액 : " << CUR_ACC[selection].getBalance() << endl << endl;
-        }
-        else {
-            break;
-        }
-    }
-    CUR_ACC[selection].subBalance(money);
-    (*idToAccPtr[dest]).addBalance(money);
-    // cout << endl << "계좌번호 " << dest << "로 이체가 완료되었습니다." << endl;
-    // cout << "현재 잔액 : " << CUR_ACC[selection].getBalance() << endl << endl;
-    return;
 }
 
 void Bank::btnCheckAccount() {
@@ -430,7 +230,7 @@ void Bank::btnWithdraw() {
         info = "출금할 금액을 양의 정수로 입력해주세요.";
     }
     else if (CUR_ACC[account].subBalance(money)) {// 입금
-        info = "출금에 성공했습니다.\n출금 계좌: %1\n츌금 금액: %2\n현재 잔액: %3";
+        info = "출금에 성공했습니다.\n출금 계좌: %1\n출금 금액: %2\n현재 잔액: %3";
         info = info.arg(QString::number(CUR_ACC[account].getId())).arg(QString::number(money)).arg(QString::number(CUR_ACC[account].getBalance()));
     }
     else {
@@ -460,4 +260,62 @@ void Bank::btnWithdrawAccountList() {
     ui->info_withdrawAccountList->setPlainText(info);
 }
 
+void Bank::btnTransferAccountList() {
+    QString info = "";
+    if (CUR_ACC.empty()) {
+        info = "* 계좌 없음 *\n- 계좌를 개설해주세요. -";
+    }
+    else {
+        QString tmp;
+        for (int i = 0; i < CUR_ACC.size(); i++) {
+            tmp = "[%1번 계좌]\n";
+            tmp = tmp.arg(QString::number(i + 1));
+            tmp.append("계좌번호: ");
+            tmp.append(QString::number(CUR_ACC[i].getId()));
+            tmp.append("\n잔액: ");
+            tmp.append(QString::number(CUR_ACC[i].getBalance()));
+            tmp.append("\n\n");
+            info.append(tmp);
+        }
+    }
+    ui->info_transferAccountList->setPlainText(info);
+}
 
+
+void Bank::btnTransfer() {
+    LL account = ui->input_transferFromAccount->text().toLongLong();
+    LL dest = ui->input_transferToAccount->text().toLongLong();
+    LL money = ui->input_transferMoney->text().toLongLong();
+    QString pw = ui->input_transferPw->text();
+    account--;
+
+    QString info;
+    if(account < 0 || account < CUR_ACC.size()) {
+        info = "잘못된 계좌입니다. 다시 선택해주세요.";
+    }
+    else if(CUR_ACC[account].getPw() != pw) {
+        info = "비밀번호가 틀렸습니다. 다시 입력해주세요.";
+    }
+    else if (dest < 10000000000000 || dest >= 100000000000000) {
+        info = "* 잘못된 계좌번호 형식 *\n- 14자리의 계좌번호를 입력해 주십시오. -";
+    }
+    else if(idToAccPtr.find(dest) == idToAccPtr.end()) {
+        info = "* 존재하지 않는 계좌 *\n- 다시 입력해주세요. -";
+    }
+    else if (money <= 0) {
+        info = "* 금액 형식 오류 *\n양의 정수로 입력해 주십시오.";
+    }
+    else if (money > CUR_ACC[account].getBalance()) {
+        info = "* 잔액을 초과하여 이체할 수 없습니다. *\n";
+        info.append("현재 잔액 : %1");
+        info.arg(QString::number(CUR_ACC[account].getBalance()));
+    }
+    else {
+        CUR_ACC[account].subBalance(money);
+        (*idToAccPtr[dest]).addBalance(money);
+        info = "계좌번호 %1로 이체가 완료되었습니다.\n";
+        info.append("현재 잔액: %2");
+        info.arg(QString::number(dest)).arg(QString::number(CUR_ACC[account].getBalance()));
+    }
+    ui->info_transferAccountList->setPlainText(info);
+}
