@@ -13,12 +13,12 @@ Bank::Bank(QWidget *parent)
 {
     ui->setupUi(this);
     bankService();
-    users.emplace_back(User("Init", "0000"));
 
     // For Init
     idToIdx = QMap<QString, int>();
     idToAccPtr = QMap<long long, Account*>();
     users = QVector<User>();
+    users.emplace_back(User("Init", "0000"));
 }
 
 Bank::~Bank()
@@ -38,7 +38,7 @@ bool Bank::checkCurUser(const QString& id, const QString& pw) {
 
 void Bank::bankService() {		//은행업무
     bool useService = true;
-    int selection = 0;
+    int selection = 7;
     // cout << endl << "[은행 업무를 시작합니다.]" << endl << endl;
     while (useService) {
         while (checkCurUser(users[0].getId(), users[0].getPw())) { // User가 초기 값이라면
@@ -133,7 +133,7 @@ void Bank::makeAccount() {
 
 void Bank::loginSystem() {
     int selection = 0;
-    // cout << "[로그인 시스템]" << endl;
+    // cout << "[로그인시스템]" << endl;
     while (1) {
         // cout << "업무 선택 -> (1. 로그인 : Login / 2. 회원 가입 : Sign Up / 3. 종료 : Exit) : ";
         // cin >> selection;
@@ -225,7 +225,7 @@ void Bank::checkAccount() {	//계좌조회
 }
 
 void Bank::deposit() {		//입금
-    int selection = 0;
+    int selection = -1;
     LL input = 0;
     while (selection != -1) {
         checkAccount();
@@ -306,9 +306,9 @@ void Bank::withdraw() {	//출금
             // cout << "* 출금 취소 *" << endl;
             return;
         }
-        else if (CUR_ACC[selection].getPw() == pw) {
-            break;
-        }
+        // else if (CUR_ACC[selection].getPw() == pw) {
+        //     break;
+        // }
         else {
             // cout << "* 잘못된 비밀번호 *" << endl;
             // cout << "- 다시 입력해주세요. -" << endl;
@@ -372,9 +372,9 @@ void Bank::sendMoney() {
             // cout << "* 이체 취소 *" << endl;
             return;
         }
-        else if (CUR_ACC[selection].getPw() == pw) {
-            break;
-        }
+        // else if (CUR_ACC[selection].getPw() == pw) {
+        //     break;
+        // }
         else {
             // cout << "* 잘못된 비밀번호 *" << endl;
             // cout << "- 다시 입력해주세요. -" << endl;

@@ -3,6 +3,8 @@ using namespace std;
 
 User::User()
 {
+    this->id = "";
+    this->pw = "";
 }
 
 User::User(const QString& id, const QString& pw)
