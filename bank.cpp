@@ -31,6 +31,9 @@ void Bank::linkButtons() {
     connect(ui->btn_deposit, SIGNAL(clicked()), this, SLOT(btnDeposit()));
     connect(ui->btn_depositAccountList, SIGNAL(clicked()), this, SLOT(btnDepositAccountList()));
     connect(ui->btn_makeAccount, SIGNAL(clicked()), this, SLOT(btnMakeAccount()));
+
+    connect(ui->btn_withdraw, SIGNAL(clicked()), this, SLOT(btnWithdraw()));
+    connect(ui->btn_withdrawAccountList, SIGNAL(clicked()), this, SLOT(btnWithdrawAccountList()));
 }
 
 bool Bank::checkCurUser(const QString& id, const QString& pw) {
@@ -347,6 +350,7 @@ void Bank::btnCheckAccount() {
 void Bank::btnDeposit() {
     LL account = ui->input_depositAccount->text().toLongLong();
     LL money = ui->input_depositMoney->text().toLongLong();
+    account--;
 
     QString info;
     if(account >= CUR_ACC.size() || account < 0) {
@@ -360,8 +364,9 @@ void Bank::btnDeposit() {
         info = "입금에 실패했습니다.";
     }
     ui->info_depositAccountList->setPlainText(info);
-
 }
+
+
 void Bank::btnDepositAccountList() {
     QString info = "";
     if (CUR_ACC.empty()) {
@@ -405,5 +410,54 @@ void Bank::btnMakeAccount() {
     QString tmp = "[계좌 개설 완료]\n계좌번호: %1\n잔액: %2원\n비밀번호: %3\n";
     tmp = tmp.arg(QString::number(id)).arg(initMoney).arg(pw);
     ui->info_makeAccount->setPlainText(tmp);
-
 }
+
+
+void Bank::btnWithdraw() {
+    LL account = ui->input_withdrawAccount->text().toLongLong();
+    LL money = ui->input_withdrawMoney->text().toLongLong();
+    QString pw = ui->input_withdrawPw->text();
+    account--;
+
+    QString info;
+    if(account >= CUR_ACC.size() || account < 0) {
+        info = "잘못된 계좌입니다. 다시 입력해주세요";
+    }
+    else if (CUR_ACC[account].getPw() != pw) {
+        info = "비밀번호가 잘못되었습니다. 다시 입력해주세요";
+    }
+    else if(money <= 0) {
+        info = "출금할 금액을 양의 정수로 입력해주세요.";
+    }
+    else if (CUR_ACC[account].subBalance(money)) {// 입금
+        info = "출금에 성공했습니다.\n출금 계좌: %1\n츌금 금액: %2\n현재 잔액: %3";
+        info = info.arg(QString::number(CUR_ACC[account].getId())).arg(QString::number(money)).arg(QString::number(CUR_ACC[account].getBalance()));
+    }
+    else {
+        info = "출금에 실패했습니다.\n사유 : 잔액부족";
+    }
+    ui->info_withdrawAccountList->setPlainText(info);
+}
+
+void Bank::btnWithdrawAccountList() {
+    QString info = "";
+    if (CUR_ACC.empty()) {
+        info = "* 계좌 없음 *\n- 계좌를 개설해주세요. -";
+    }
+    else {
+        QString tmp;
+        for (int i = 0; i < CUR_ACC.size(); i++) {
+            tmp = "[%1번 계좌]\n";
+            tmp = tmp.arg(QString::number(i + 1));
+            tmp.append("계좌번호: ");
+            tmp.append(QString::number(CUR_ACC[i].getId()));
+            tmp.append("\n잔액: ");
+            tmp.append(QString::number(CUR_ACC[i].getBalance()));
+            tmp.append("\n\n");
+            info.append(tmp);
+        }
+    }
+    ui->info_withdrawAccountList->setPlainText(info);
+}
+
+

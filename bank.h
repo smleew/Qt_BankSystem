@@ -50,5 +50,8 @@ public slots:
     void btnDepositAccountList();
     void btnMakeAccount();
 
+    void btnWithdraw();
+    void btnWithdrawAccountList();
+
 };
 #endif // BANK_H
