@@ -14,7 +14,6 @@ Bank::Bank(QWidget *parent)
     ui->setupUi(this);
     linkButtons();
 
-    // bankService();
     // For Init
     idToIdx = QMap<QString, int>();
     idToAccPtr = QMap<long long, Account*>();
@@ -30,7 +29,7 @@ Bank::~Bank()
 void Bank::linkButtons() {
     connect(ui->btn_checkAccount, SIGNAL(clicked()), this, SLOT(btnCheckAccount()));
     connect(ui->btn_deposit, SIGNAL(clicked()), this, SLOT(btnDeposit()));
-    connect(ui->btn_depositCheck , SIGNAL(clicked()), this, SLOT(btnDepositCheck()));
+    connect(ui->btn_depositAccountList, SIGNAL(clicked()), this, SLOT(btnDepositAccountList()));
     connect(ui->btn_makeAccount, SIGNAL(clicked()), this, SLOT(btnMakeAccount()));
 }
 
@@ -42,67 +41,6 @@ bool Bank::checkCurUser(const QString& id, const QString& pw) {
         return false;
     }
     return true;
-}
-
-void Bank::bankService() {		//은행업무
-    bool useService = true;
-    int selection = 7;
-    // cout << endl << "[은행 업무를 시작합니다.]" << endl << endl;
-    while (useService) {
-        // while (checkCurUser(users[0].getId(), users[0].getPw())) { // User가 초기 값이라면
-        //     try {
-        //         loginSystem();
-        //     }
-        //     catch (int n) {
-        //         return;
-        //     }
-        // }
-
-        // cout << endl << "[업무 선택]" << endl;
-        // cout << left << setw(20) << "1. 계좌 조회";
-        // cout << left << setw(20) << "1. Check Account" << endl;
-        // cout << left << setw(20) << "2. 계좌 개설";
-        // cout << left << setw(20) << "2. Open Account" << endl;
-        // cout << left << setw(20) << "3. 입금";
-        // cout << left << setw(20) << "3. Deposit" << endl;
-        // cout << left << setw(20) << "4. 출금";
-        // cout << left << setw(20) << "4. Withdraw" << endl;
-        // cout << left << setw(20) << "5. 이체";
-        // cout << left << setw(20) << "5. Transfer" << endl;
-        // cout << left << setw(20) << "6. 로그아웃";
-        // cout << left << setw(20) << "6. Logout" << endl;
-        // cout << left << setw(20) << "7. 종료";
-        // cout << left << setw(20) << "7. Exit" << endl;
-        // cout << ">> ";
-        // cin >> selection;
-        switch (selection) {
-        case 1:
-            checkAccount();
-            break;
-        case 2:
-            makeAccount();
-            break;
-        case 3:
-            deposit();
-            break;
-        case 4:
-            withdraw();
-            break;
-        case 5:
-            sendMoney();
-            break;
-        case 6:
-            curUserIdx = 0;
-            break;
-        case 7:
-            useService = false;
-            // cout << " - 업무를 종료합니다. -" << endl;
-            break;
-        default:
-            // cout << "- 잘못된 번호를 입력하셨습니다. -" << endl;
-            break;
-        }
-    }
 }
 
 void Bank::makeAccount() {
@@ -229,56 +167,6 @@ void Bank::checkAccount() {	//계좌조회
             // cout << "[" << i + 1 << "번 계좌]";
             CUR_ACC[i].printAccountInfo();
         }
-    }
-}
-
-void Bank::deposit() {		//입금
-    int selection = -1;
-    LL input = 0;
-    while (selection != -1) {
-        checkAccount();
-        // cout << endl << "입금 받을 계좌 선택 (-1 : 취소)" << endl;
-        // cout << ">> ";
-        // cin >> selection;
-        if (selection <= CUR_ACC.size()) {
-            // cout << selection << "번 계좌가 선택되었습니다." << endl;
-            selection--;
-            break;
-        }
-        else if(selection == -1) {
-            // cout << "* 입금 취소 *" << endl;
-            return;
-        }
-        else {
-            // cout << "* 잘못된 숫자 입력 *" << endl;
-            // cout << "- 다시 입력해주세요. -" << endl;
-        }
-    }
-    while (1) {
-        // cout << endl << "입금할 금액 입력 (-1 : 취소) : " << endl;
-        // cout << ">> ";
-        // cin >> input;
-
-        try {
-            if (input == -1) {
-                // cout << "* 입금 취소 *" << endl;
-                return;
-            }
-            if (input > 0) {
-                break;
-            }
-            else {
-                throw 1;
-            }
-        }
-        catch (int n) { /*cout << "- 양의 정수를 입력해주세요. -" << endl;*/ }
-    }
-
-    if (CUR_ACC[selection].addBalance(input)) {// 입금
-        // cout << "* 입금 성공 *" << endl;
-    }
-    else {
-        // cout << "* 입금 실패 *" << endl;
     }
 }
 
@@ -437,19 +325,68 @@ void Bank::sendMoney() {
 }
 
 void Bank::btnCheckAccount() {
-    qDebug() << "ca";
+    QString info = "";
+    if (CUR_ACC.empty()) {
+        info = "* 계좌 없음 *\n- 계좌를 개설해주세요. -";
+    }
+    else {
+        QString tmp;
+        for (int i = 0; i < CUR_ACC.size(); i++) {
+            tmp = "[%1번 계좌]\n";
+            tmp = tmp.arg(QString::number(i + 1));
+            tmp.append("계좌번호: ");
+            tmp.append(QString::number(CUR_ACC[i].getId()));
+            tmp.append("\n잔액: ");
+            tmp.append(QString::number(CUR_ACC[i].getBalance()));
+            tmp.append("\n\n");
+            info.append(tmp);
+        }
+    }
+    ui->info_checkAccount->setPlainText(info);
 }
 void Bank::btnDeposit() {
-    qDebug() << "de";
+    LL account = ui->input_depositAccount->text().toLongLong();
+    LL money = ui->input_depositMoney->text().toLongLong();
+
+    QString info;
+    if(account >= CUR_ACC.size() || account < 0) {
+        info = "잘못된 계좌입니다. 다시 입력해주세요";
+    }
+    else if (CUR_ACC[account].addBalance(money)) {// 입금
+        info = "입금에 성공했습니다.\n입금 계좌: %1\n입금 금액: %2\n현재 잔액: %3";
+        info = info.arg(QString::number(CUR_ACC[account].getId())).arg(QString::number(money)).arg(QString::number(CUR_ACC[account].getBalance()));
+    }
+    else {
+        info = "입금에 실패했습니다.";
+    }
+    ui->info_depositAccountList->setPlainText(info);
+
 }
-void Bank::btnDepositCheck() {
-    qDebug() << "dc";
+void Bank::btnDepositAccountList() {
+    QString info = "";
+    if (CUR_ACC.empty()) {
+        info = "* 계좌 없음 *\n- 계좌를 개설해주세요. -";
+    }
+    else {
+        QString tmp;
+        for (int i = 0; i < CUR_ACC.size(); i++) {
+            tmp = "[%1번 계좌]\n";
+            tmp = tmp.arg(QString::number(i + 1));
+            tmp.append("계좌번호: ");
+            tmp.append(QString::number(CUR_ACC[i].getId()));
+            tmp.append("\n잔액: ");
+            tmp.append(QString::number(CUR_ACC[i].getBalance()));
+            tmp.append("\n\n");
+            info.append(tmp);
+        }
+    }
+    ui->info_depositAccountList->setPlainText(info);
 }
+
+
 void Bank::btnMakeAccount() {
     QString initMoney = ui->input_initMoney->text();
     QString pw = ui->input_makeAccountPw->text();
-    qDebug() << initMoney;
-    qDebug() << pw;
 
     long long input = initMoney.toLongLong();
     long long id = 0;
@@ -465,10 +402,8 @@ void Bank::btnMakeAccount() {
 
     CUR_USER.addAccount(id, input, pw);
     idToAccPtr[id] = &(CUR_ACC.back());
-    // cout << "* 계좌 개설 완료 *" << endl;
     QString tmp = "[계좌 개설 완료]\n계좌번호: %1\n잔액: %2원\n비밀번호: %3\n";
     tmp = tmp.arg(QString::number(id)).arg(initMoney).arg(pw);
-    qDebug() << tmp;
     ui->info_makeAccount->setPlainText(tmp);
 
 }

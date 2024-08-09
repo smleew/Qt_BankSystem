@@ -37,7 +37,6 @@ void User::addAccount(const LL& id, const LL& balance, const QString& pw)
 {								//계좌 생성후 계좌정보를 배열에 추가
     Account newAccount(id, balance, pw);
     accounts.push_back(newAccount);
-	accounts.push_back(Account(id, balance, pw));
 }
 
 
