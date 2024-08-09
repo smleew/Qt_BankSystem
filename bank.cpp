@@ -44,12 +44,12 @@ bool Bank::checkCurUser(const QString& id, const QString& pw) {
     return true;
 }
 
-void Bank::bankService() {		//¿∫«‡æ˜π´
+void Bank::bankService() {		//ÏùÄÌñâÏóÖÎ¨¥
     bool useService = true;
     int selection = 7;
-    // cout << endl << "[¿∫«‡ æ˜π´∏¶ Ω√¿€«’¥œ¥Ÿ.]" << endl << endl;
+    // cout << endl << "[ÏùÄÌñâ ÏóÖÎ¨¥Î•º ÏãúÏûëÌï©ÎãàÎã§.]" << endl << endl;
     while (useService) {
-        // while (checkCurUser(users[0].getId(), users[0].getPw())) { // User∞° √ ±‚ ∞™¿Ã∂Û∏È
+        // while (checkCurUser(users[0].getId(), users[0].getPw())) { // UserÍ∞Ä Ï¥àÍ∏∞ Í∞íÏù¥ÎùºÎ©¥
         //     try {
         //         loginSystem();
         //     }
@@ -58,20 +58,20 @@ void Bank::bankService() {		//¿∫«‡æ˜π´
         //     }
         // }
 
-        // cout << endl << "[æ˜π´ º±≈√]" << endl;
-        // cout << left << setw(20) << "1. ∞Ë¡¬ ¡∂»∏";
+        // cout << endl << "[ÏóÖÎ¨¥ ÏÑ†ÌÉù]" << endl;
+        // cout << left << setw(20) << "1. Í≥ÑÏ¢å Ï°∞Ìöå";
         // cout << left << setw(20) << "1. Check Account" << endl;
-        // cout << left << setw(20) << "2. ∞Ë¡¬ ∞≥º≥";
+        // cout << left << setw(20) << "2. Í≥ÑÏ¢å Í∞úÏÑ§";
         // cout << left << setw(20) << "2. Open Account" << endl;
-        // cout << left << setw(20) << "3. ¿‘±›";
+        // cout << left << setw(20) << "3. ÏûÖÍ∏à";
         // cout << left << setw(20) << "3. Deposit" << endl;
-        // cout << left << setw(20) << "4. √‚±›";
+        // cout << left << setw(20) << "4. Ï∂úÍ∏à";
         // cout << left << setw(20) << "4. Withdraw" << endl;
-        // cout << left << setw(20) << "5. ¿Ã√º";
+        // cout << left << setw(20) << "5. Ïù¥Ï≤¥";
         // cout << left << setw(20) << "5. Transfer" << endl;
-        // cout << left << setw(20) << "6. ∑Œ±◊æ∆øÙ";
+        // cout << left << setw(20) << "6. Î°úÍ∑∏ÏïÑÏõÉ";
         // cout << left << setw(20) << "6. Logout" << endl;
-        // cout << left << setw(20) << "7. ¡æ∑·";
+        // cout << left << setw(20) << "7. Ï¢ÖÎ£å";
         // cout << left << setw(20) << "7. Exit" << endl;
         // cout << ">> ";
         // cin >> selection;
@@ -96,10 +96,10 @@ void Bank::bankService() {		//¿∫«‡æ˜π´
             break;
         case 7:
             useService = false;
-            // cout << " - æ˜π´∏¶ ¡æ∑·«’¥œ¥Ÿ. -" << endl;
+            // cout << " - ÏóÖÎ¨¥Î•º Ï¢ÖÎ£åÌï©ÎãàÎã§. -" << endl;
             break;
         default:
-            // cout << "- ¿ﬂ∏¯µ» π¯»£∏¶ ¿‘∑¬«œºÃΩ¿¥œ¥Ÿ. -" << endl;
+            // cout << "- ÏûòÎ™ªÎêú Î≤àÌò∏Î•º ÏûÖÎ†•ÌïòÏÖ®ÏäµÎãàÎã§. -" << endl;
             break;
         }
     }
@@ -113,42 +113,42 @@ void Bank::makeAccount() {
     mt19937_64 gen(rd());
     uniform_int_distribution<long long> dis(numeric_limits<long long>::min(), numeric_limits<long long>::max());
     id = abs(dis(gen) % 100000000000000);
-    while (idToAccPtr.find(id) != idToAccPtr.end()) { // id ¡ﬂ∫π πÊ¡ˆ
+    while (idToAccPtr.find(id) != idToAccPtr.end()) { // id Ï§ëÎ≥µ Î∞©ÏßÄ
         id = dis(gen) % 100000000000000;
         id = abs(id);
     }
-    // cout << endl << "[∞Ë¡¬ ∞≥º≥]" << endl;
-    // cout << "√ ±‚ ¿‘±›æ◊ ¿‘∑¬ (-1 : √Îº“)" << endl;
+    // cout << endl << "[Í≥ÑÏ¢å Í∞úÏÑ§]" << endl;
+    // cout << "Ï¥àÍ∏∞ ÏûÖÍ∏àÏï° ÏûÖÎ†• (-1 : Ï∑®ÏÜå)" << endl;
     // cout << ">> ";
     // cin >> input;
     if (input == -1) {
-        // cout << "* ∞Ë¡¬ ∞≥º≥ √Îº“ *" << endl;
+        // cout << "* Í≥ÑÏ¢å Í∞úÏÑ§ Ï∑®ÏÜå *" << endl;
         return;
     }
 
-    // cout << "∫Òπ–π¯»£ ¿‘∑¬ (-1 : √Îº“)" << endl;
+    // cout << "ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†• (-1 : Ï∑®ÏÜå)" << endl;
     // cout << ">> ";
     // cin >> pw;
     if (pw == "-1") {
-        // cout << "- ∞Ë¡¬ ∞≥º≥¿ª √Îº“«’¥œ¥Ÿ. -" << endl;
+        // cout << "- Í≥ÑÏ¢å Í∞úÏÑ§ÏùÑ Ï∑®ÏÜåÌï©ÎãàÎã§. -" << endl;
         return;
     }
 
     CUR_USER.addAccount(id, input, pw);
     idToAccPtr[id] = &(CUR_ACC.back());
-    // cout << "* ∞Ë¡¬ ∞≥º≥ øœ∑· *" << endl;
+    // cout << "* Í≥ÑÏ¢å Í∞úÏÑ§ ÏôÑÎ£å *" << endl;
 }
 
 void Bank::loginSystem() {
     int selection = 0;
-    // cout << "[∑Œ±◊¿ŒΩ√Ω∫≈€]" << endl;
+    // cout << "[Î°úÍ∑∏Ïù∏ÏãúÏä§ÌÖú]" << endl;
     while (1) {
-        // cout << "æ˜π´ º±≈√ -> (1. ∑Œ±◊¿Œ : Login / 2. »∏ø¯ ∞°¿‘ : Sign Up / 3. ¡æ∑· : Exit) : ";
+        // cout << "ÏóÖÎ¨¥ ÏÑ†ÌÉù -> (1. Î°úÍ∑∏Ïù∏ : Login / 2. ÌöåÏõê Í∞ÄÏûÖ : Sign Up / 3. Ï¢ÖÎ£å : Exit) : ";
         // cin >> selection;
         if (selection >= 1 && selection <= 3) {
             break;
         }
-        // cout << "- ¿ﬂ∏¯µ» º˝¿⁄∏¶ ¿‘∑¬«œºÃΩ¿¥œ¥Ÿ. -" << endl << endl;
+        // cout << "- ÏûòÎ™ªÎêú Ïà´ÏûêÎ•º ÏûÖÎ†•ÌïòÏÖ®ÏäµÎãàÎã§. -" << endl << endl;
     }
     switch (selection) {
     case 1:
@@ -161,56 +161,56 @@ void Bank::loginSystem() {
         break;
     case 3:
     default:
-        // cout << "- Ω√Ω∫≈€¿ª ¡æ∑·«’¥œ¥Ÿ. -" << endl;
+        // cout << "- ÏãúÏä§ÌÖúÏùÑ Ï¢ÖÎ£åÌï©ÎãàÎã§. -" << endl;
         throw 1;
     }
 }
 
 void Bank::signUp() {
     QString id = "", pw = "";
-    // cout << "[»∏ø¯ ∞°¿‘]" << endl;
+    // cout << "[ÌöåÏõê Í∞ÄÏûÖ]" << endl;
     while (1) {
         // cout << ">> ID : ";
         // cin >> id;
         if (idToIdx.find(id) == idToIdx.end()) {
             break;
         }
-        // cout << "* ¿ÃπÃ ¡∏¿Á«œ¥¬ ID *" << endl;
-        // cout << "- ¥Ÿ∏• ID∏¶ ¿‘∑¬«ÿ ¡÷Ω Ω√ø¿. -" << endl << endl;
+        // cout << "* Ïù¥ÎØ∏ Ï°¥Ïû¨ÌïòÎäî ID *" << endl;
+        // cout << "- Îã§Î•∏ IDÎ•º ÏûÖÎ†•Ìï¥ Ï£ºÏã≠ÏãúÏò§. -" << endl << endl;
     }
     // cout << ">> PW : ";
     // cin >> pw;
     idToIdx[id] = users.size();
     users.emplace_back(User(id, pw));
-    // cout << "* »∏ø¯ ∞°¿‘ øœ∑· *" << endl;
-    // cout << "- ∑Œ±◊¿Œ¿ª Ω√µµ«ÿ ¡÷Ω Ω√ø¿. -" << endl << endl;
+    // cout << "* ÌöåÏõê Í∞ÄÏûÖ ÏôÑÎ£å *" << endl;
+    // cout << "- Î°úÍ∑∏Ïù∏ÏùÑ ÏãúÎèÑÌï¥ Ï£ºÏã≠ÏãúÏò§. -" << endl << endl;
 }
 
 void Bank::signIn() {
     QString id = "", pw = "";
-    // cout << "[∑Œ±◊¿Œ] (ID, PWø° -1 ¿‘∑¬ : √Îº“)" << endl;
+    // cout << "[Î°úÍ∑∏Ïù∏] (ID, PWÏóê -1 ÏûÖÎ†• : Ï∑®ÏÜå)" << endl;
     while (1) {
         // cout << ">> ID : ";
         // cin >> id;
         // cout << ">> PW : ";
         // cin >> pw;
         if (id == "-1" && pw == "-1") {
-            // cout << "* ∑Œ±◊¿Œ √Îº“ *" << endl << endl;
+            // cout << "* Î°úÍ∑∏Ïù∏ Ï∑®ÏÜå *" << endl << endl;
             return;
         }
 
         if (idToIdx.find(id) == idToIdx.end()) {
-            // cout << "* ¿œƒ°«œ¥¬ ID æ¯¿Ω *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ ¡÷ººø‰. -" << endl;
+            // cout << "* ÏùºÏπòÌïòÎäî ID ÏóÜÏùå *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥ Ï£ºÏÑ∏Ïöî. -" << endl;
             continue;
         }
 
         if (!users[idToIdx[id]].checkPw(pw)) {
-            // cout << "* ¿ﬂ∏¯µ» ∫Òπ–π¯»£ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ ¡÷ººø‰. -" << endl << endl;
+            // cout << "* ÏûòÎ™ªÎêú ÎπÑÎ∞ÄÎ≤àÌò∏ *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥ Ï£ºÏÑ∏Ïöî. -" << endl << endl;
         }
         else {
-            // cout << "* ∑Œ±◊¿Œ º∫∞¯ *" << endl;
+            // cout << "* Î°úÍ∑∏Ïù∏ ÏÑ±Í≥µ *" << endl;
             curUserIdx = idToIdx[id];
             break;
         }
@@ -218,50 +218,50 @@ void Bank::signIn() {
 }
 
 
-void Bank::checkAccount() {	//∞Ë¡¬¡∂»∏
+void Bank::checkAccount() {	//Í≥ÑÏ¢åÏ°∞Ìöå
     if (CUR_ACC.empty()) {
-        // cout << "* ∞Ë¡¬ æ¯¿Ω *" << endl;
-        // cout << "- ∞Ë¡¬∏¶ ∞≥º≥«ÿ¡÷ººø‰. -" << endl;
+        // cout << "* Í≥ÑÏ¢å ÏóÜÏùå *" << endl;
+        // cout << "- Í≥ÑÏ¢åÎ•º Í∞úÏÑ§Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
     }
     else {
         for (int i = 0; i < CUR_ACC.size(); i++) {
             // cout << endl;
-            // cout << "[" << i + 1 << "π¯ ∞Ë¡¬]";
+            // cout << "[" << i + 1 << "Î≤à Í≥ÑÏ¢å]";
             CUR_ACC[i].printAccountInfo();
         }
     }
 }
 
-void Bank::deposit() {		//¿‘±›
+void Bank::deposit() {		//ÏûÖÍ∏à
     int selection = -1;
     LL input = 0;
     while (selection != -1) {
         checkAccount();
-        // cout << endl << "¿‘±› πﬁ¿ª ∞Ë¡¬ º±≈√ (-1 : √Îº“)" << endl;
+        // cout << endl << "ÏûÖÍ∏à Î∞õÏùÑ Í≥ÑÏ¢å ÏÑ†ÌÉù (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> selection;
         if (selection <= CUR_ACC.size()) {
-            // cout << selection << "π¯ ∞Ë¡¬∞° º±≈√µ«æ˙Ω¿¥œ¥Ÿ." << endl;
+            // cout << selection << "Î≤à Í≥ÑÏ¢åÍ∞Ä ÏÑ†ÌÉùÎêòÏóàÏäµÎãàÎã§." << endl;
             selection--;
             break;
         }
         else if(selection == -1) {
-            // cout << "* ¿‘±› √Îº“ *" << endl;
+            // cout << "* ÏûÖÍ∏à Ï∑®ÏÜå *" << endl;
             return;
         }
         else {
-            // cout << "* ¿ﬂ∏¯µ» º˝¿⁄ ¿‘∑¬ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;
+            // cout << "* ÏûòÎ™ªÎêú Ïà´Ïûê ÏûÖÎ†• *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
         }
     }
     while (1) {
-        // cout << endl << "¿‘±›«“ ±›æ◊ ¿‘∑¬ (-1 : √Îº“) : " << endl;
+        // cout << endl << "ÏûÖÍ∏àÌï† Í∏àÏï° ÏûÖÎ†• (-1 : Ï∑®ÏÜå) : " << endl;
         // cout << ">> ";
         // cin >> input;
 
         try {
             if (input == -1) {
-                // cout << "* ¿‘±› √Îº“ *" << endl;
+                // cout << "* ÏûÖÍ∏à Ï∑®ÏÜå *" << endl;
                 return;
             }
             if (input > 0) {
@@ -271,80 +271,80 @@ void Bank::deposit() {		//¿‘±›
                 throw 1;
             }
         }
-        catch (int n) { /*cout << "- æÁ¿« ¡§ºˆ∏¶ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;*/ }
+        catch (int n) { /*cout << "- ÏñëÏùò Ï†ïÏàòÎ•º ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;*/ }
     }
 
-    if (CUR_ACC[selection].addBalance(input)) {// ¿‘±›
-        // cout << "* ¿‘±› º∫∞¯ *" << endl;
+    if (CUR_ACC[selection].addBalance(input)) {// ÏûÖÍ∏à
+        // cout << "* ÏûÖÍ∏à ÏÑ±Í≥µ *" << endl;
     }
     else {
-        // cout << "* ¿‘±› Ω«∆– *" << endl;
+        // cout << "* ÏûÖÍ∏à Ïã§Ìå® *" << endl;
     }
 }
 
-void Bank::withdraw() {	//√‚±›
+void Bank::withdraw() {	//Ï∂úÍ∏à
     int selection = 0;
     LL output = 0;
     QString pw = "";
     while (selection != -1) {
         checkAccount();
-        // cout << endl << "√‚±›«“ ∞Ë¡¬ º±≈√ (-1 : √Îº“)" << endl;
+        // cout << endl << "Ï∂úÍ∏àÌï† Í≥ÑÏ¢å ÏÑ†ÌÉù (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> selection;
         if (selection == -1) {
-            // cout << "* √‚±› √Îº“ *" << endl;
+            // cout << "* Ï∂úÍ∏à Ï∑®ÏÜå *" << endl;
             return;
         }
         else if (selection <= CUR_ACC.size()) {
-            // cout << selection << "π¯ ∞Ë¡¬∞° º±≈√µ«æ˙Ω¿¥œ¥Ÿ." << endl;
+            // cout << selection << "Î≤à Í≥ÑÏ¢åÍ∞Ä ÏÑ†ÌÉùÎêòÏóàÏäµÎãàÎã§." << endl;
             selection--;
             break;
         }
         else {
-            // cout << "* ¿ﬂ∏¯µ» º˝¿⁄ ¿‘∑¬ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;
+            // cout << "* ÏûòÎ™ªÎêú Ïà´Ïûê ÏûÖÎ†• *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
         }
     }
 
     while (1) {
-        // cout << endl << "∞Ë¡¬ ∫Òπ–π¯»£ ¿‘∑¬ (-1 : √Îº“)" << endl;
+        // cout << endl << "Í≥ÑÏ¢å ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†• (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> pw;
         if (pw == "-1") {
-            // cout << "* √‚±› √Îº“ *" << endl;
+            // cout << "* Ï∂úÍ∏à Ï∑®ÏÜå *" << endl;
             return;
         }
         // else if (CUR_ACC[selection].getPw() == pw) {
         //     break;
         // }
         else {
-            // cout << "* ¿ﬂ∏¯µ» ∫Òπ–π¯»£ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;
+            // cout << "* ÏûòÎ™ªÎêú ÎπÑÎ∞ÄÎ≤àÌò∏ *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
         }
     }
 
     while (1) {
-        // cout << endl << "√‚±›«“ ±›æ◊ ¿‘∑¬ (-1 : √Îº“)" << endl;
+        // cout << endl << "Ï∂úÍ∏àÌï† Í∏àÏï° ÏûÖÎ†• (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> output;
         if (output == -1) {
-            // cout << "* √‚±› √Îº“ *" << endl;
+            // cout << "* Ï∂úÍ∏à Ï∑®ÏÜå *" << endl;
             return;
         }
         if (output > 0) {
             break;
         }
         else {
-            // cout << "- æÁ¿« ¡§ºˆ∏¶ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;
+            // cout << "- ÏñëÏùò Ï†ïÏàòÎ•º ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
         }
     }
 
-    if (CUR_ACC[selection].subBalance(output)) {// ¿‘±›
-        // cout << "* √‚±› º∫∞¯ *" << endl;
-        // cout << "- «ˆ¿Á ¿‹æ◊ : " << CUR_ACC[selection].getBalance() << "ø¯ -" << endl;
+    if (CUR_ACC[selection].subBalance(output)) {// ÏûÖÍ∏à
+        // cout << "* Ï∂úÍ∏à ÏÑ±Í≥µ *" << endl;
+        // cout << "- ÌòÑÏû¨ ÏûîÏï° : " << CUR_ACC[selection].getBalance() << "Ïõê -" << endl;
     }
     else {
-        // cout << "* √‚±› Ω«∆– *" << endl;
+        // cout << "* Ï∂úÍ∏à Ïã§Ìå® *" << endl;
     }
 }
 
@@ -354,76 +354,76 @@ void Bank::sendMoney() {
     QString pw = "";
     while (selection != -1) {
         checkAccount();
-        // cout << endl << "¿Ã√º«“ ∞Ë¡¬ º±≈√ (-1 : √Îº“)" << endl;
+        // cout << endl << "Ïù¥Ï≤¥Ìï† Í≥ÑÏ¢å ÏÑ†ÌÉù (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> selection;
         if (selection <= CUR_ACC.size()) {
-            // cout << selection << "π¯ ∞Ë¡¬∞° º±≈√µ«æ˙Ω¿¥œ¥Ÿ." << endl;
+            // cout << selection << "Î≤à Í≥ÑÏ¢åÍ∞Ä ÏÑ†ÌÉùÎêòÏóàÏäµÎãàÎã§." << endl;
             selection--;
             break;
         }
         else if (selection == -1) {
-            // cout << "* ¿Ã√º √Îº“ *" << endl;
+            // cout << "* Ïù¥Ï≤¥ Ï∑®ÏÜå *" << endl;
             return;
         }
         else {
-            // cout << "* ¿ﬂ∏¯µ» º˝¿⁄ ¿‘∑¬ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;
+            // cout << "* ÏûòÎ™ªÎêú Ïà´Ïûê ÏûÖÎ†• *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
         }
     }
 
     while (1) {
-        // cout << endl << "∫Òπ–π¯»£ ¿‘∑¬ (-1 : √Îº“)" << endl;
+        // cout << endl << "ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†• (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> pw;
         if (pw == "-1") {
-            // cout << "* ¿Ã√º √Îº“ *" << endl;
+            // cout << "* Ïù¥Ï≤¥ Ï∑®ÏÜå *" << endl;
             return;
         }
         // else if (CUR_ACC[selection].getPw() == pw) {
         //     break;
         // }
         else {
-            // cout << "* ¿ﬂ∏¯µ» ∫Òπ–π¯»£ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl;
+            // cout << "* ÏûòÎ™ªÎêú ÎπÑÎ∞ÄÎ≤àÌò∏ *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl;
         }
     }
 
     while (1) {
-        // cout << endl << "¿Ã√º πﬁ¿ª ∞Ë¡¬π¯»£ ¿‘∑¬ (14¿⁄∏Æ) (-1 : √Îº“)" << endl;
+        // cout << endl << "Ïù¥Ï≤¥ Î∞õÏùÑ Í≥ÑÏ¢åÎ≤àÌò∏ ÏûÖÎ†• (14ÏûêÎ¶¨) (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> dest;
         if (dest == -1) {
-            // cout << "* ¿Ã√º √Îº“ *" << endl;
+            // cout << "* Ïù¥Ï≤¥ Ï∑®ÏÜå *" << endl;
             return;
         }
         if (dest < 10000000000000 || dest >= 100000000000000) {
-            // cout << "* ¿ﬂ∏¯µ» ∞Ë¡¬π¯»£ «¸Ωƒ *" << endl;
-            // cout << "- 14¿⁄∏Æ¿« ∞Ë¡¬π¯»£∏¶ ¿‘∑¬«ÿ ¡÷Ω Ω√ø¿. -" << endl << endl;
+            // cout << "* ÏûòÎ™ªÎêú Í≥ÑÏ¢åÎ≤àÌò∏ ÌòïÏãù *" << endl;
+            // cout << "- 14ÏûêÎ¶¨Ïùò Í≥ÑÏ¢åÎ≤àÌò∏Î•º ÏûÖÎ†•Ìï¥ Ï£ºÏã≠ÏãúÏò§. -" << endl << endl;
         }
         else if(idToAccPtr.find(dest) == idToAccPtr.end()) {
-            // cout << "* ¡∏¿Á«œ¡ˆ æ ¥¬ ∞Ë¡¬ *" << endl;
-            // cout << "- ¥ŸΩ√ ¿‘∑¬«ÿ¡÷ººø‰. -" << endl << endl;
+            // cout << "* Ï°¥Ïû¨ÌïòÏßÄ ÏïäÎäî Í≥ÑÏ¢å *" << endl;
+            // cout << "- Îã§Ïãú ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî. -" << endl << endl;
         }
         else {
             break;
         }
     }
     while (1) {
-        // cout << endl << "¿Ã√º«“ ±›æ◊ ¿‘∑¬ (-1 : √Îº“)" << endl;
+        // cout << endl << "Ïù¥Ï≤¥Ìï† Í∏àÏï° ÏûÖÎ†• (-1 : Ï∑®ÏÜå)" << endl;
         // cout << ">> ";
         // cin >> money;
         if (money == -1) {
-            // cout << "* ¿Ã√º √Îº“ *" << endl;
+            // cout << "* Ïù¥Ï≤¥ Ï∑®ÏÜå *" << endl;
             return;
         }
         if (money <= 0) {
-            // cout << "* ±›æ◊ «¸Ωƒ ø¿∑˘ *" << endl;
-            // cout << "æÁ¿« ¡§ºˆ∑Œ ¿‘∑¬«ÿ ¡÷Ω Ω√ø¿." << endl << endl;
+            // cout << "* Í∏àÏï° ÌòïÏãù Ïò§Î•ò *" << endl;
+            // cout << "ÏñëÏùò Ï†ïÏàòÎ°ú ÏûÖÎ†•Ìï¥ Ï£ºÏã≠ÏãúÏò§." << endl << endl;
         }
         else if (money > CUR_ACC[selection].getBalance()) {
-            // cout << "* ¿‹æ◊¿ª √ ∞˙«œø© ¿Ã√º«“ ºˆ æ¯Ω¿¥œ¥Ÿ. *" << endl;
-            // cout << "«ˆ¿Á ¿‹æ◊ : " << CUR_ACC[selection].getBalance() << endl << endl;
+            // cout << "* ÏûîÏï°ÏùÑ Ï¥àÍ≥ºÌïòÏó¨ Ïù¥Ï≤¥Ìï† Ïàò ÏóÜÏäµÎãàÎã§. *" << endl;
+            // cout << "ÌòÑÏû¨ ÏûîÏï° : " << CUR_ACC[selection].getBalance() << endl << endl;
         }
         else {
             break;
@@ -431,8 +431,8 @@ void Bank::sendMoney() {
     }
     CUR_ACC[selection].subBalance(money);
     (*idToAccPtr[dest]).addBalance(money);
-    // cout << endl << "∞Ë¡¬π¯»£ " << dest << "∑Œ ¿Ã√º∞° øœ∑·µ«æ˙Ω¿¥œ¥Ÿ." << endl;
-    // cout << "«ˆ¿Á ¿‹æ◊ : " << CUR_ACC[selection].getBalance() << endl << endl;
+    // cout << endl << "Í≥ÑÏ¢åÎ≤àÌò∏ " << dest << "Î°ú Ïù¥Ï≤¥Í∞Ä ÏôÑÎ£åÎêòÏóàÏäµÎãàÎã§." << endl;
+    // cout << "ÌòÑÏû¨ ÏûîÏï° : " << CUR_ACC[selection].getBalance() << endl << endl;
     return;
 }
 
@@ -458,15 +458,15 @@ void Bank::btnMakeAccount() {
     mt19937_64 gen(rd());
     uniform_int_distribution<long long> dis(numeric_limits<long long>::min(), numeric_limits<long long>::max());
     id = abs(dis(gen) % 100000000000000);
-    while (idToAccPtr.find(id) != idToAccPtr.end()) { // id ¡ﬂ∫π πÊ¡ˆ
+    while (idToAccPtr.find(id) != idToAccPtr.end()) { // id Ï§ëÎ≥µ Î∞©ÏßÄ
         id = dis(gen) % 100000000000000;
         id = abs(id);
     }
 
     CUR_USER.addAccount(id, input, pw);
     idToAccPtr[id] = &(CUR_ACC.back());
-    // cout << "* ∞Ë¡¬ ∞≥º≥ øœ∑· *" << endl;
-    QString tmp = "[∞Ë¡¬ ∞≥º≥ øœ∑·]\n∞Ë¡¬π¯»£: %1\n¿‹æ◊: %2ø¯\n∫Òπ–π¯»£: %3\n";
+    // cout << "* Í≥ÑÏ¢å Í∞úÏÑ§ ÏôÑÎ£å *" << endl;
+    QString tmp = "[Í≥ÑÏ¢å Í∞úÏÑ§ ÏôÑÎ£å]\nÍ≥ÑÏ¢åÎ≤àÌò∏: %1\nÏûîÏï°: %2Ïõê\nÎπÑÎ∞ÄÎ≤àÌò∏: %3\n";
     tmp = tmp.arg(QString::number(id)).arg(initMoney).arg(pw);
     qDebug() << tmp;
     ui->info_makeAccount->setPlainText(tmp);
