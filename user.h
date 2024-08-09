@@ -7,24 +7,24 @@ using namespace std;
 
 class User {
 private:
-    QString id;			// »ç¿ëÀÚ id
-    QString pw;			// »ç¿ëÀÚ pw
-    QVector<Account> accounts;	// °èÁÂ ¹è¿­
+    QString id;			// ì‚¬ìš©ì id
+    QString pw;			// ì‚¬ìš©ì pw
+    QVector<Account> accounts;	// ê³„ì¢Œ ë°°ì—´
 public:
 	User();
-    User(const QString& id, const QString& pw);		// »ı¼º½Ã ÀÔ·Â
+    User(const QString& id, const QString& pw);		// ìƒì„±ì‹œ ì…ë ¥
 	~User();
-    bool checkId(const QString& input);		// id ÀÏÄ¡¿©ºÎ È®ÀÎ
-    bool checkPw(const QString& input);		// pw ÀÏÄ¡¿©ºÎ È®ÀÎ
-    void addAccount(const LL& id, const LL& balance, const QString& pw); //°èÁÂ »ı¼ºÈÄ °èÁÂÁ¤º¸¸¦ ¹è¿­¿¡ Ãß°¡
+    bool checkId(const QString& input);		// id ì¼ì¹˜ì—¬ë¶€ í™•ì¸
+    bool checkPw(const QString& input);		// pw ì¼ì¹˜ì—¬ë¶€ í™•ì¸
+    void addAccount(const LL& id, const LL& balance, const QString& pw); //ê³„ì¢Œ ìƒì„±í›„ ê³„ì¢Œì •ë³´ë¥¼ ë°°ì—´ì— ì¶”ê°€
 	
 
-	// get ÇÔ¼ö
+	// get í•¨ìˆ˜
     QString getId() const { return id; }
     QString getPw() const { return pw; }
-    QVector<Account>& getAccounts() { return accounts; }; //°èÁÂ ¹è¿­ ¹İÈ¯, ¿ÜºÎ¿¡¼­ ¼öÁ¤ÇÏµµ·Ï
+    QVector<Account>& getAccounts() { return accounts; }; //ê³„ì¢Œ ë°°ì—´ ë°˜í™˜, ì™¸ë¶€ì—ì„œ ìˆ˜ì •í•˜ë„ë¡
 
-	// set ÇÔ¼ö
+	// set í•¨ìˆ˜
     void setId(QString id) { this->id = id; }
     void setPw(QString pw) { this->pw = pw; }
 };

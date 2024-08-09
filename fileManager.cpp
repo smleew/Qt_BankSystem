@@ -1,18 +1,18 @@
 #include "fileManager.h"
 #include <QApplication>
 
-//ÆÄÀÏÀÇ ³»¿ë Ãâ·Â
+//íŒŒì¼ì˜ ë‚´ìš© ì¶œë ¥
 void FileManager::printManual(const QString& fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        // cout << "ÆÄÀÏ ¿­±â ½ÇÆĞ" << endl;
+        // cout << "íŒŒì¼ ì—´ê¸° ì‹¤íŒ¨" << endl;
         return;
     }
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
-        // ÇÑ ÁÙ¾¿ ÀĞ¾î¼­ Ã³¸®
+        // í•œ ì¤„ì”© ì½ì–´ì„œ ì²˜ë¦¬
         qDebug() << line;
     }
     file.close();

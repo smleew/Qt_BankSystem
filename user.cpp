@@ -9,7 +9,7 @@ User::User()
 
 User::User(const QString& id, const QString& pw)
 {
-	this->id = id;					// »ı¼º½Ã ÀÔ·Â
+	this->id = id;					// ìƒì„±ì‹œ ì…ë ¥
 	this->pw = pw;
 }
 
@@ -17,7 +17,7 @@ User::~User()
 {
 }
 
-bool User::checkId(const QString& input)	// id ÀÏÄ¡¿©ºÎ È®ÀÎ
+bool User::checkId(const QString& input)	// id ì¼ì¹˜ì—¬ë¶€ í™•ì¸
 {
 	if (input == id)
 		return true;
@@ -25,7 +25,7 @@ bool User::checkId(const QString& input)	// id ÀÏÄ¡¿©ºÎ È®ÀÎ
 		return false;
 }
 
-bool User::checkPw(const QString& input)	// pw ÀÏÄ¡¿©ºÎ È®ÀÎ
+bool User::checkPw(const QString& input)	// pw ì¼ì¹˜ì—¬ë¶€ í™•ì¸
 {
 	if (input == pw)
 		return true;
@@ -34,7 +34,7 @@ bool User::checkPw(const QString& input)	// pw ÀÏÄ¡¿©ºÎ È®ÀÎ
 }
 
 void User::addAccount(const LL& id, const LL& balance, const QString& pw)
-{								//°èÁÂ »ı¼ºÈÄ °èÁÂÁ¤º¸¸¦ ¹è¿­¿¡ Ãß°¡
+{								//ê³„ì¢Œ ìƒì„±í›„ ê³„ì¢Œì •ë³´ë¥¼ ë°°ì—´ì— ì¶”ê°€
     Account newAccount(id, balance, pw);
     accounts.push_back(newAccount);
 	accounts.push_back(Account(id, balance, pw));

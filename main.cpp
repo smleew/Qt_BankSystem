@@ -7,9 +7,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // cout << "[ÀºÇà ¾÷¹« ¸Þ´º¾ó : Bank System Manual]" << endl;
-    // cout << "¾ð¾î¸¦ ¼±ÅÃÇÏ½Ê½Ã¿À. : Choose Language" << endl;
-    // cout << "1. ÇÑ±¹¾î" << endl;
+    // cout << "[ì€í–‰ ì—…ë¬´ ë©”ë‰´ì–¼ : Bank System Manual]" << endl;
+    // cout << "ì–¸ì–´ë¥¼ ì„ íƒí•˜ì‹­ì‹œì˜¤. : Choose Language" << endl;
+    // cout << "1. í•œêµ­ì–´" << endl;
     // cout << "2. English" << endl;
     // cout << ">> ";
 

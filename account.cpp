@@ -1,49 +1,48 @@
 #include <iostream>
 #include <iomanip>
 #include "account.h"
-using namespace std;
+using namespace std
 
 Account::Account() {}
 
 Account::Account(const LL& id, const LL& balance, const QString& pw)
 {
-    this->id = id;				// »ı¼º½Ã ÀÔ·Â
-    this->balance = balance;
-    this->pw = pw;
+    this->id = id				// ìƒì„±ì‹œ ì…ë ¥
+    this->balance = balance
+    this->pw = pw
 }
 
 Account::~Account() {}
 
-bool Account::addBalance(const LL& input)	// ÀÜ¾× +, ¼º°ø¿©ºÎ ¹İÈ¯
+bool Account::addBalance(const LL& input)	// ì”ì•¡ +, ì„±ê³µì—¬ë¶€ ë°˜í™˜
 {
-	balance = balance + input;
-	return true;
+	balance = balance + input
+	return true
 }
 
-bool Account::subBalance(const LL& output)	// ÀÜ¾× -, ¼º°ø¿©ºÎ ¹İÈ¯
+bool Account::subBalance(const LL& output)	// ì”ì•¡ -, ì„±ê³µì—¬ë¶€ ë°˜í™˜
 {
-	if (balance >= output) {			// ÀÜ¾×ÀÌ Ãâ±İ¾× ÀÌ»óÀÏ¶§
-		balance = balance - output;	
-		return true;					// true ¹İÈ¯
+	if (balance >= output) {			// ì”ì•¡ì´ ì¶œê¸ˆì•¡ ì´ìƒì¼ë•Œ
+		balance = balance - output	
+		return true					// true ë°˜í™˜
 	}
 
-	else {							// ÀÜ¾×ÀÌ Ãâ±İ¾× º¸´Ù ÀÛÀº °æ¿ì
-		return false;				// false ¹İÈ¯
+	else {							// ì”ì•¡ì´ ì¶œê¸ˆì•¡ ë³´ë‹¤ ì‘ì€ ê²½ìš°
+		return false				// false ë°˜í™˜
 	}
 }
 
-void Account::printAccountInfo()	// °èÁÂ¹øÈ£, ÀÜ¾× Ãâ·Â
+void Account::printAccountInfo()	// ê³„ì¢Œë²ˆí˜¸, ì”ì•¡ ì¶œë ¥
 {
-    // cout << endl;
-    // cout << "°èÁÂ¹øÈ£ : " << setfill('0') << setw(14) << this->id << setfill(' ') << endl;
-    // cout << "ÀÜ¾× : " << this->balance << endl;
+    // cout << endl
+    // cout << "ê³„ì¢Œë²ˆí˜¸ : " << setfill('0') << setw(14) << this->id << setfill(' ') << endl
+    // cout << "ì”ì•¡ : " << this->balance << endl
 }
 
-bool Account::checkIdPw(const LL& id, const QString& pw)	//°èÁÂ id,pw ÀÏÄ¡¿©ºÎ Ã¼Å©
+bool Account::checkIdPw(const LL& id, const QString& pw)	//ê³„ì¢Œ id,pw ì¼ì¹˜ì—¬ë¶€ ì²´í¬
 {
 	if ((this->id == id) && (this->pw == pw))
-		return true;
+		return true
 	else
-		return false;
+		return false
 }
-

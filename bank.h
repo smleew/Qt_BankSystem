@@ -26,24 +26,24 @@ public:
 private:
     Ui::Bank *ui;
 
-    /* º¯¼ö ¸ğÀ½ */
+    /* ë³€ìˆ˜ ëª¨ìŒ */
     // bool useService = true;
     QMap<QString, int> idToIdx;
     QMap<long long, Account*> idToAccPtr;
     QVector<User> users;
     int curUserIdx = 0;
 
-    /* ÇÔ¼ö ¸ğÀ½ */
-    void bankService();		//ÀºÇà¾÷¹«
-    void checkAccount();	//°èÁÂ Á¶È¸
-    void makeAccount(); // °èÁÂ °³¼³
-    void signUp(); // È¸¿ø°¡ÀÔ
-    void signIn();	// ·Î±×ÀÎ
-    void loginSystem(); // ·Î±×ÀÎ ½Ã½ºÅÛ
-    void deposit();		//ÀÔ±İ
-    void withdraw();	//Ãâ±İ
-    void sendMoney(); // ¼Û±İ
-    bool checkCurUser(const QString& id, const QString& pw); // ÇöÀç À¯Àú È®ÀÎ
+    /* í•¨ìˆ˜ ëª¨ìŒ */
+    void bankService();		//ì€í–‰ì—…ë¬´
+    void checkAccount();	//ê³„ì¢Œ ì¡°íšŒ
+    void makeAccount(); // ê³„ì¢Œ ê°œì„¤
+    void signUp(); // íšŒì›ê°€ì…
+    void signIn();	// ë¡œê·¸ì¸
+    void loginSystem(); // ë¡œê·¸ì¸ ì‹œìŠ¤í…œ
+    void deposit();		//ì…ê¸ˆ
+    void withdraw();	//ì¶œê¸ˆ
+    void sendMoney(); // ì†¡ê¸ˆ
+    bool checkCurUser(const QString& id, const QString& pw); // í˜„ì¬ ìœ ì € í™•ì¸
     void linkButtons();
 
 public slots:

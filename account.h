@@ -6,25 +6,25 @@ using namespace std;
 
 class Account {
 private:
-    LL id = 0;			// °èÁÂ¹øÈ£
-    LL balance = 0;		// ÀÜ¾×
-    QString pw = "";		// °èÁÂ ºñ¹Ð¹øÈ£
+    LL id = 0;			// ê³„ì¢Œë²ˆí˜¸
+    LL balance = 0;		// ìž”ì•¡
+    QString pw = "";		// ê³„ì¢Œ ë¹„ë°€ë²ˆí˜¸
 
 public:
 	Account();
-    Account(const LL& id, const LL& balance, const QString& pw);	// »ý¼º½Ã ÀÔ·Â
+    Account(const LL& id, const LL& balance, const QString& pw);	// ìƒì„±ì‹œ ìž…ë ¥
 	~Account();
-	bool addBalance(const LL& input);		// ÀÜ¾× +, ¼º°ø¿©ºÎ ¹ÝÈ¯
-	bool subBalance(const LL& output);		// ÀÜ¾× -, ¼º°ø¿©ºÎ ¹ÝÈ¯
-	void printAccountInfo();		// °èÁÂ¹øÈ£, ÀÜ¾× Ãâ·Â
-    bool checkIdPw(const LL& id, const QString& pw);	//°èÁÂ id,pw ÀÏÄ¡¿©ºÎ Ã¼Å©
+	bool addBalance(const LL& input);		// ìž”ì•¡ +, ì„±ê³µì—¬ë¶€ ë°˜í™˜
+	bool subBalance(const LL& output);		// ìž”ì•¡ -, ì„±ê³µì—¬ë¶€ ë°˜í™˜
+	void printAccountInfo();		// ê³„ì¢Œë²ˆí˜¸, ìž”ì•¡ ì¶œë ¥
+    bool checkIdPw(const LL& id, const QString& pw);	//ê³„ì¢Œ id,pw ì¼ì¹˜ì—¬ë¶€ ì²´í¬
 
-	// get ÇÔ¼ö
+	// get í•¨ìˆ˜
 	LL getId() const { return id; }
 	LL getBalance() const { return balance; }
     QString getPw() const { return pw; }
 
-	// set ÇÔ¼ö
+	// set í•¨ìˆ˜
 	void setId(const LL& id) { this->id = id; }
 	void setBalance(const LL& balance) { this->balance = balance; }
     void setPw(const QString& pw) { this->pw = pw; }
