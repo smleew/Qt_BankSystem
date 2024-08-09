@@ -1,5 +1,5 @@
-#ifndef BANK_H
-#define BANK_H
+#ifndef _BANK_H_
+#define _BANK_H_
 
 #include <QWidget>
 
@@ -20,4 +20,4 @@ public:
 private:
     Ui::Bank *ui;
 };
-#endif // BANK_H
+#endif // BANK__H

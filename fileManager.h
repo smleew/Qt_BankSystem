@@ -8,10 +8,10 @@ using namespace std;
 
 class FileManager {
 private:
-	vector<string> manual;
+    vector<string> manual;
 public:
-	FileManager() {};
-	~FileManager() {};
-	void printManual(const string& fileName);
+    FileManager() {};
+    ~FileManager() {};
+    void printManual(const string& fileName);
 };
 #endif
