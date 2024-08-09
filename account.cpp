@@ -34,9 +34,9 @@ bool Account::subBalance(const LL& output)	// 잔액 -, 성공여부 반환
 
 void Account::printAccountInfo()	// 계좌번호, 잔액 출력
 {
-	cout << endl;
-	cout << "계좌번호 : " << setfill('0') << setw(14) << this->id << setfill(' ') << endl;
-	cout << "잔액 : " << this->balance << endl;
+    // cout << endl;
+    // cout << "계좌번호 : " << setfill('0') << setw(14) << this->id << setfill(' ') << endl;
+    // cout << "잔액 : " << this->balance << endl;
 }
 
 bool Account::checkIdPw(const LL& id, const string& pw)	//계좌 id,pw 일치여부 체크

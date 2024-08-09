@@ -11,7 +11,7 @@ void FileManager::printManual(const string& fileName)
     }
     char buf[200];
     while (fin.getline(buf, 200)) {
-        cout << buf << endl;
+        // cout << buf << endl;
     }
     fin.close();
 }
