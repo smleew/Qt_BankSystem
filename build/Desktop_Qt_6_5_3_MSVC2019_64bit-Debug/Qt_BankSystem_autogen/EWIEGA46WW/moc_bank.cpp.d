@@ -1,4 +1,7 @@
 C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/Qt_BankSystem_autogen/EWIEGA46WW/moc_bank.cpp: C:/Users/smlee/Documents/Qt/Qt_BankSystem/bank.h \
+  C:/Qt/6.5.3/msvc2019_64/include/QtCore/QMap \
+  C:/Qt/6.5.3/msvc2019_64/include/QtCore/QString \
+  C:/Qt/6.5.3/msvc2019_64/include/QtCore/QVector \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/q20memory.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/qalgorithms.h \
@@ -105,6 +108,7 @@ C:/Users/smlee/Documents/Qt/Qt_BankSystem/build/Desktop_Qt_6_5_3_MSVC2019_64bit-
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/qvariant.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/qvarlengtharray.h \
+  C:/Qt/6.5.3/msvc2019_64/include/QtCore/qvector.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.5.3/msvc2019_64/include/QtGui/qaction.h \

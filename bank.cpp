@@ -12,8 +12,9 @@ Bank::Bank(QWidget *parent)
     , ui(new Ui::Bank)
 {
     ui->setupUi(this);
-    bankService();
+    linkButtons();
 
+    // bankService();
     // For Init
     idToIdx = QMap<QString, int>();
     idToAccPtr = QMap<long long, Account*>();
@@ -24,6 +25,13 @@ Bank::Bank(QWidget *parent)
 Bank::~Bank()
 {
     delete ui;
+}
+
+void Bank::linkButtons() {
+    connect(ui->btn_checkAccount, SIGNAL(clicked()), this, SLOT(btnCheckAccount()));
+    connect(ui->btn_deposit, SIGNAL(clicked()), this, SLOT(btnDeposit()));
+    connect(ui->btn_depositCheck , SIGNAL(clicked()), this, SLOT(btnDepositCheck()));
+    connect(ui->btn_makeAccount, SIGNAL(clicked()), this, SLOT(btnMakeAccount()));
 }
 
 bool Bank::checkCurUser(const QString& id, const QString& pw) {
@@ -41,14 +49,14 @@ void Bank::bankService() {		//은행업무
     int selection = 7;
     // cout << endl << "[은행 업무를 시작합니다.]" << endl << endl;
     while (useService) {
-        while (checkCurUser(users[0].getId(), users[0].getPw())) { // User가 초기 값이라면
-            try {
-                loginSystem();
-            }
-            catch (int n) {
-                return;
-            }
-        }
+        // while (checkCurUser(users[0].getId(), users[0].getPw())) { // User가 초기 값이라면
+        //     try {
+        //         loginSystem();
+        //     }
+        //     catch (int n) {
+        //         return;
+        //     }
+        // }
 
         // cout << endl << "[업무 선택]" << endl;
         // cout << left << setw(20) << "1. 계좌 조회";
@@ -426,4 +434,38 @@ void Bank::sendMoney() {
     // cout << endl << "계좌번호 " << dest << "로 이체가 완료되었습니다." << endl;
     // cout << "현재 잔액 : " << CUR_ACC[selection].getBalance() << endl << endl;
     return;
+}
+
+void Bank::btnCheckAccount() {
+    qDebug() << "ca";
+}
+void Bank::btnDeposit() {
+    qDebug() << "de";
+}
+void Bank::btnDepositCheck() {
+    qDebug() << "dc";
+}
+void Bank::btnMakeAccount() {
+    QString initMoney = ui->input_initMoney->text();
+    QString pw = ui->input_makeAccountPw->text();
+    qDebug() << initMoney;
+    qDebug() << pw;
+
+    long long input = initMoney.toLongLong();
+    long long id = 0;
+
+    random_device rd;
+    mt19937_64 gen(rd());
+    uniform_int_distribution<long long> dis(numeric_limits<long long>::min(), numeric_limits<long long>::max());
+    id = abs(dis(gen) % 100000000000000);
+    while (idToAccPtr.find(id) != idToAccPtr.end()) { // id 중복 방지
+        id = dis(gen) % 100000000000000;
+        id = abs(id);
+    }
+
+    CUR_USER.addAccount(id, input, pw);
+    idToAccPtr[id] = &(CUR_ACC.back());
+    // cout << "* 계좌 개설 완료 *" << endl;
+   // QString tmp = "[계좌 개설 완료]\n계좌번호: %1\n잔액: %2원\n비밀번호: %3\n".arg(id, initMoney, pw);
+//qDebug() << tmp;
 }

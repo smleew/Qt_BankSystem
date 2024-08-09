@@ -31,5 +31,7 @@ int main(int argc, char *argv[])
     Bank w;
 
     w.show();
+
+
     return a.exec();
 }

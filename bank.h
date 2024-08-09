@@ -44,6 +44,13 @@ private:
     void withdraw();	//출금
     void sendMoney(); // 송금
     bool checkCurUser(const QString& id, const QString& pw); // 현재 유저 확인
+    void linkButtons();
+
+public slots:
+    void btnCheckAccount();
+    void btnDeposit();
+    void btnDepositCheck();
+    void btnMakeAccount();
 
 };
 #endif // BANK_H
