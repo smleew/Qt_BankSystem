@@ -24,7 +24,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         fileManager.h user.h
-        fileManger.cpp  user.cpp
+        fileManager.cpp  user.cpp
         account.h
         account.cpp
 

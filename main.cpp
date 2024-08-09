@@ -13,10 +13,10 @@ int main(int argc, char *argv[])
     // cout << "2. English" << endl;
     // cout << ">> ";
 
-    int select;
+    int select = 1;
     // cin >> select;
     FileManager fileManager;
-    string fileName;
+    QString fileName;
     switch (select) {
     case 1:
         fileName = "korManual.txt";

@@ -1,8 +1,8 @@
 #ifndef BANK_H
 #define BANK_H
-#include <map>
-#include <string>
-#include <vector>
+#include <QMap>
+#include <QString>
+#include <QVector>
 #include "user.h"
 using namespace std;
 
@@ -28,9 +28,9 @@ private:
 
     /* 변수 모음 */
     // bool useService = true;
-    map<string, int> idToIdx;
-    map<long long, Account*> idToAccPtr;
-    vector<User> users;
+    QMap<QString, int> idToIdx;
+    QMap<long long, Account*> idToAccPtr;
+    QVector<User> users;
     int curUserIdx = 0;
 
     /* 함수 모음 */
@@ -43,7 +43,7 @@ private:
     void deposit();		//입금
     void withdraw();	//출금
     void sendMoney(); // 송금
-    bool checkCurUser(const string& id, const string& pw); // 현재 유저 확인
+    bool checkCurUser(const QString& id, const QString& pw); // 현재 유저 확인
 
 };
 #endif // BANK_H

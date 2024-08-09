@@ -5,11 +5,11 @@ using namespace std;
 
 Account::Account() {}
 
-Account::Account(const LL& id, const LL& balance, const string& pw)
+Account::Account(const LL& id, const LL& balance, const QString& pw)
 {
-	this->id = id;				// 생성시 입력
-	this->balance = balance;
-	this->pw = pw;
+    this->id = id;				// 생성시 입력
+    this->balance = balance;
+    this->pw = pw;
 }
 
 Account::~Account() {}
@@ -39,7 +39,7 @@ void Account::printAccountInfo()	// 계좌번호, 잔액 출력
     // cout << "잔액 : " << this->balance << endl;
 }
 
-bool Account::checkIdPw(const LL& id, const string& pw)	//계좌 id,pw 일치여부 체크
+bool Account::checkIdPw(const LL& id, const QString& pw)	//계좌 id,pw 일치여부 체크
 {
 	if ((this->id == id) && (this->pw == pw))
 		return true;

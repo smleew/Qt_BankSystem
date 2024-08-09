@@ -1,6 +1,5 @@
 #include "bank.h"
 #include "./ui_bank.h"
-#include <iostream>
 #include <iomanip>
 #include <random>
 #include <limits>
@@ -15,6 +14,11 @@ Bank::Bank(QWidget *parent)
     ui->setupUi(this);
     bankService();
     users.emplace_back(User("Init", "0000"));
+
+    // For Init
+    idToIdx = QMap<QString, int>();
+    idToAccPtr = QMap<long long, Account*>();
+    users = QVector<User>();
 }
 
 Bank::~Bank()
@@ -22,7 +26,7 @@ Bank::~Bank()
     delete ui;
 }
 
-bool Bank::checkCurUser(const string& id, const string& pw) {
+bool Bank::checkCurUser(const QString& id, const QString& pw) {
     if (!users[curUserIdx].checkId(id)) {
         return false;
     }
@@ -34,7 +38,7 @@ bool Bank::checkCurUser(const string& id, const string& pw) {
 
 void Bank::bankService() {		//은행업무
     bool useService = true;
-    int selection;
+    int selection = 0;
     // cout << endl << "[은행 업무를 시작합니다.]" << endl << endl;
     while (useService) {
         while (checkCurUser(users[0].getId(), users[0].getPw())) { // User가 초기 값이라면
@@ -94,8 +98,8 @@ void Bank::bankService() {		//은행업무
 }
 
 void Bank::makeAccount() {
-    long long input, id;
-    string pw, name;
+    long long input = 0, id = 0;
+    QString pw = "", name = "";
 
     random_device rd;
     mt19937_64 gen(rd());
@@ -128,7 +132,7 @@ void Bank::makeAccount() {
 }
 
 void Bank::loginSystem() {
-    int selection;
+    int selection = 0;
     // cout << "[로그인 시스템]" << endl;
     while (1) {
         // cout << "업무 선택 -> (1. 로그인 : Login / 2. 회원 가입 : Sign Up / 3. 종료 : Exit) : ";
@@ -155,7 +159,7 @@ void Bank::loginSystem() {
 }
 
 void Bank::signUp() {
-    string id, pw;
+    QString id = "", pw = "";
     // cout << "[회원 가입]" << endl;
     while (1) {
         // cout << ">> ID : ";
@@ -175,7 +179,7 @@ void Bank::signUp() {
 }
 
 void Bank::signIn() {
-    string id, pw;
+    QString id = "", pw = "";
     // cout << "[로그인] (ID, PW에 -1 입력 : 취소)" << endl;
     while (1) {
         // cout << ">> ID : ";
@@ -222,7 +226,7 @@ void Bank::checkAccount() {	//계좌조회
 
 void Bank::deposit() {		//입금
     int selection = 0;
-    LL input;
+    LL input = 0;
     while (selection != -1) {
         checkAccount();
         // cout << endl << "입금 받을 계좌 선택 (-1 : 취소)" << endl;
@@ -272,8 +276,8 @@ void Bank::deposit() {		//입금
 
 void Bank::withdraw() {	//출금
     int selection = 0;
-    LL output;
-    string pw = "";
+    LL output = 0;
+    QString pw = "";
     while (selection != -1) {
         checkAccount();
         // cout << endl << "출금할 계좌 선택 (-1 : 취소)" << endl;
@@ -338,8 +342,8 @@ void Bank::withdraw() {	//출금
 
 void Bank::sendMoney() {
     int selection = 0;
-    LL dest, money;
-    string pw;
+    LL dest = 0, money = 0;
+    QString pw = "";
     while (selection != -1) {
         checkAccount();
         // cout << endl << "이체할 계좌 선택 (-1 : 취소)" << endl;
