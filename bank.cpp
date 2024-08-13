@@ -37,6 +37,12 @@ void Bank::linkButtons() {
 
     connect(ui->btn_transfer, SIGNAL(clicked()), this, SLOT(btnTransfer()));
     connect(ui->btn_transferAccountList, SIGNAL(clicked()), this, SLOT(btnTransferAccountList()));
+
+    connect(ui->btn_login, SIGNAL(clicked()), this, SLOT(btnSignIn()));
+    connect(ui->btn_signup, SIGNAL(clicked()), this, SLOT(btnSignUp()));
+
+    connect(ui->btn_loginToSignup, SIGNAL(clicked()), this, SLOT(btnOpenSignUp()));
+
 }
 
 bool Bank::checkCurUser(const QString& id, const QString& pw) {
@@ -49,82 +55,47 @@ bool Bank::checkCurUser(const QString& id, const QString& pw) {
     return true;
 }
 
-void Bank::loginSystem() {
-    int selection = 0;
-    // cout << "[로그인시스템]" << endl;
-    while (1) {
-        // cout << "업무 선택 -> (1. 로그인 : Login / 2. 회원 가입 : Sign Up / 3. 종료 : Exit) : ";
-        // cin >> selection;
-        if (selection >= 1 && selection <= 3) {
-            break;
-        }
-        // cout << "- 잘못된 숫자를 입력하셨습니다. -" << endl << endl;
-    }
-    switch (selection) {
-    case 1:
-        // cout << endl;
-        signIn();
-        break;
-    case 2:
-        // cout << endl;
-        signUp();
-        break;
-    case 3:
-    default:
-        // cout << "- 시스템을 종료합니다. -" << endl;
-        throw 1;
-    }
+void Bank::btnOpenSignUp() {
+    ui->selectLoginSignup->setCurrentIndex(1);
 }
 
-void Bank::signUp() {
-    QString id = "", pw = "";
-    // cout << "[회원 가입]" << endl;
-    while (1) {
-        // cout << ">> ID : ";
-        // cin >> id;
-        if (idToIdx.find(id) == idToIdx.end()) {
-            break;
-        }
-        // cout << "* 이미 존재하는 ID *" << endl;
-        // cout << "- 다른 ID를 입력해 주십시오. -" << endl << endl;
+
+void Bank::btnSignUp() {
+    QString id = ui->input_signupId->text();
+    QString pw = ui->input_signupPw->text();
+    if (idToIdx.find(id) != idToIdx.end()) {
+        QMessageBox::warning(this, "ID 중복", "이미 존재하는 ID입니다.\n다른 ID를 입력해주세요.");
+        return;
     }
-    // cout << ">> PW : ";
-    // cin >> pw;
     idToIdx[id] = users.size();
     users.emplace_back(User(id, pw));
-    // cout << "* 회원 가입 완료 *" << endl;
-    // cout << "- 로그인을 시도해 주십시오. -" << endl << endl;
+    QMessageBox::information(this, "회원가입 완료", "회원가입이 완료되었습니다. 로그인을 시도해주세요.",
+                             QMessageBox::Ok);
+    ui->selectLoginSignup->setCurrentIndex(0);
+    ui->input_signupId->text() = "";
+    ui->input_signupPw->text() = "";
+    return;
 }
 
-void Bank::signIn() {
-    QString id = "", pw = "";
-    // cout << "[로그인] (ID, PW에 -1 입력 : 취소)" << endl;
-    while (1) {
-        // cout << ">> ID : ";
-        // cin >> id;
-        // cout << ">> PW : ";
-        // cin >> pw;
-        if (id == "-1" && pw == "-1") {
-            // cout << "* 로그인 취소 *" << endl << endl;
-            return;
-        }
+void Bank::btnSignIn() {
+    QString id = ui->input_loginId->text();
+    QString pw = ui->input_loginPw->text();
 
-        if (idToIdx.find(id) == idToIdx.end()) {
-            // cout << "* 일치하는 ID 없음 *" << endl;
-            // cout << "- 다시 입력해 주세요. -" << endl;
-            continue;
-        }
+    if (idToIdx.find(id) == idToIdx.end()) {
+        QMessageBox::warning(this, "일치하는 ID 없음", "일치하는 ID가 없습니다.\n다시 입력해주세요.");
+        return;
 
-        if (!users[idToIdx[id]].checkPw(pw)) {
-            // cout << "* 잘못된 비밀번호 *" << endl;
-            // cout << "- 다시 입력해 주세요. -" << endl << endl;
-        }
-        else {
-            // cout << "* 로그인 성공 *" << endl;
-            curUserIdx = idToIdx[id];
-            break;
-        }
     }
+    if (!users[idToIdx[id]].checkPw(pw)) {
+        QMessageBox::warning(this, "잘못된 비밀번호", "비밀번호가 잘못되었습니다. 다시 입력해주세요.");
+        return;
+    }
+    QMessageBox::information(this, "로그인 성공", "로그인에 성공했습니다!",
+                             QMessageBox::Ok);
+    curUserIdx = idToIdx[id];
+    ui->selectLoginService->setCurrentIndex(1);
+
+    return;
 }
 
 void Bank::btnCheckAccount() {
