@@ -13,11 +13,7 @@ Bank::Bank(QWidget *parent)
 {
     ui->setupUi(this);
     linkButtons();
-
-    // For Init
-    idToIdx = QMap<QString, int>();
-    idToAccPtr = QMap<long long, Account*>();
-    users = QVector<User>();
+    ui->selectLoginService->setCurrentIndex(1);
     users.emplace_back(User("Init", "0000"));
 }
 

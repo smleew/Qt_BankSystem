@@ -41,8 +41,10 @@ private:
 
 public slots:
     void btnCheckAccount();
+
     void btnDeposit();
     void btnDepositAccountList();
+
     void btnMakeAccount();
 
     void btnWithdraw();
