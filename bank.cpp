@@ -13,7 +13,8 @@ Bank::Bank(QWidget *parent)
 {
     ui->setupUi(this);
     linkButtons();
-    ui->selectLoginService->setCurrentIndex(1);
+    ui->selectLoginService->setCurrentIndex(0);
+    ui->selectLoginSignup->setCurrentIndex(0);
     users.emplace_back(User("Init", "0000"));
 }
 
@@ -39,6 +40,29 @@ void Bank::linkButtons() {
 
     connect(ui->btn_loginToSignup, SIGNAL(clicked()), this, SLOT(btnOpenSignUp()));
 
+
+    connect(ui->btn_cancelSignup, SIGNAL(clicked()), this, SLOT(btnCancelSignUp()));
+    connect(ui->btn_exit1, SIGNAL(clicked()), this, SLOT(btnExit()));
+    connect(ui->btn_exit2, SIGNAL(clicked()), this, SLOT(btnExit()));
+    connect(ui->btn_logout, SIGNAL(clicked()), this, SLOT(btnLogOut()));
+}
+
+void Bank::btnLogOut() {
+    curUserIdx = 0;
+    QMessageBox::information(this, "로그아웃 완료", "로그아웃이 완료되었습니다. 로그인을 시도해주세요.",
+                             QMessageBox::Ok);
+    ui->selectLoginService->setCurrentIndex(0);
+}
+
+void Bank::btnExit() {
+    QMessageBox::information(this, "프로그램 종료", "프로그램이 종료되었습니다.",
+                             QMessageBox::Ok);
+    // 종료
+    delete this;
+}
+
+void Bank::btnCancelSignUp() {
+    ui->selectLoginSignup->setCurrentIndex(0);
 }
 
 bool Bank::checkCurUser(const QString& id, const QString& pw) {

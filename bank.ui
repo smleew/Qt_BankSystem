@@ -123,6 +123,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string/>
        </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
+       </property>
       </widget>
       <widget class="QPushButton" name="btn_login">
        <property name="geometry">
@@ -140,9 +143,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <widget class="QPushButton" name="btn_loginToSignup">
        <property name="geometry">
         <rect>
-         <x>380</x>
+         <x>370</x>
          <y>280</y>
-         <width>121</width>
+         <width>131</width>
          <height>41</height>
         </rect>
        </property>
@@ -241,6 +244,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string/>
        </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
+       </property>
       </widget>
       <widget class="QLabel" name="label_7">
        <property name="geometry">
@@ -268,6 +274,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <string>회원가입</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="btn_cancelSignup">
+       <property name="geometry">
+        <rect>
+         <x>370</x>
+         <y>280</y>
+         <width>131</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>뒤로가기</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QLabel" name="label">
@@ -283,27 +302,20 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>w_login</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QPushButton" name="btn_exit1">
      <property name="geometry">
       <rect>
-       <x>600</x>
-       <y>0</y>
-       <width>91</width>
-       <height>51</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_27">
-     <property name="geometry">
-      <rect>
-       <x>630</x>
-       <y>50</y>
-       <width>31</width>
-       <height>31</height>
+       <x>560</x>
+       <y>10</y>
+       <width>141</width>
+       <height>41</height>
       </rect>
      </property>
      <property name="text">
-      <string>설정</string>
+      <string>종료</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -949,7 +961,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_exit">
+    <widget class="QPushButton" name="btn_exit2">
      <property name="geometry">
       <rect>
        <x>560</x>

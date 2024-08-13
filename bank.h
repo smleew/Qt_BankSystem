@@ -57,5 +57,9 @@ public slots:
     void btnSignUp();
 
     void btnOpenSignUp();
+
+    void btnCancelSignUp();
+    void btnLogOut();
+    void btnExit();
 };
 #endif // BANK_H
