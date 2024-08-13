@@ -3,6 +3,7 @@
 #include <QMap>
 #include <QString>
 #include <QVector>
+#include <QMessageBox>
 #include "user.h"
 using namespace std;
 
@@ -34,8 +35,6 @@ private:
     int curUserIdx = 0;
 
     /* 함수 모음 */
-    void signUp(); // 회원가입
-    void signIn();	// 로그인
     void loginSystem(); // 로그인 시스템
     bool checkCurUser(const QString& id, const QString& pw); // 현재 유저 확인
     void linkButtons();
@@ -54,6 +53,9 @@ public slots:
     void btnTransfer();
     void btnTransferAccountList();
 
+    void btnSignIn();
+    void btnSignUp();
 
+    void btnOpenSignUp();
 };
 #endif // BANK_H

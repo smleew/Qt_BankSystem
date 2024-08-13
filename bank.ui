@@ -43,7 +43,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="w_login">
     <widget class="QStackedWidget" name="selectLoginSignup">
@@ -283,6 +283,29 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string>w_login</string>
      </property>
     </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>0</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_27">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>50</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>설정</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="w_service">
     <widget class="QTabWidget" name="selectService">
@@ -295,7 +318,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="w_checkAccount">
       <attribute name="title">
