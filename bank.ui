@@ -324,13 +324,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>400</x>
-         <y>308</y>
+         <y>320</y>
          <width>231</width>
          <height>41</height>
         </rect>
        </property>
        <property name="text">
         <string>계좌조회</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QTextBrowser" name="info_checkAccount">
@@ -359,6 +362,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
        </property>
       </widget>
       <widget class="QLabel" name="label_11">
@@ -418,6 +424,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string>계좌개설</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QLabel" name="label_13">
        <property name="geometry">
@@ -451,7 +463,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>0</y>
+         <y>10</y>
          <width>151</width>
          <height>31</height>
         </rect>
@@ -478,6 +490,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string>계좌조회</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QPushButton" name="btn_deposit">
        <property name="geometry">
@@ -490,6 +508,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="text">
         <string>입금</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLabel" name="label_16">
@@ -548,9 +569,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>40</y>
+         <y>50</y>
          <width>601</width>
-         <height>171</height>
+         <height>161</height>
         </rect>
        </property>
       </widget>
@@ -563,7 +584,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>280</y>
+         <y>292</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -576,7 +597,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>40</y>
+         <y>50</y>
          <width>601</width>
          <height>141</height>
         </rect>
@@ -586,7 +607,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>30</x>
-         <y>0</y>
+         <y>10</y>
          <width>151</width>
          <height>31</height>
         </rect>
@@ -605,7 +626,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>240</y>
+         <y>252</y>
          <width>271</width>
          <height>28</height>
         </rect>
@@ -618,20 +639,23 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>400</x>
-         <y>190</y>
+         <y>200</y>
          <width>231</width>
-         <height>29</height>
+         <height>41</height>
         </rect>
        </property>
        <property name="text">
         <string>계좌조회</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_withdraw">
        <property name="geometry">
         <rect>
          <x>450</x>
-         <y>278</y>
+         <y>290</y>
          <width>181</width>
          <height>71</height>
         </rect>
@@ -639,12 +663,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string>출금</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QLabel" name="label_20">
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>240</y>
+         <y>252</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -657,7 +684,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>280</y>
+         <y>292</y>
          <width>271</width>
          <height>28</height>
         </rect>
@@ -670,7 +697,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>40</x>
-         <y>320</y>
+         <y>332</y>
          <width>101</width>
          <height>20</height>
         </rect>
@@ -683,13 +710,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>320</y>
+         <y>332</y>
          <width>271</width>
          <height>28</height>
         </rect>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
        </property>
       </widget>
      </widget>
@@ -803,6 +833,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string>계좌조회</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="input_transferMoney">
        <property name="geometry">
@@ -842,6 +875,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string/>
        </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
+       </property>
       </widget>
       <widget class="QPushButton" name="btn_transfer">
        <property name="geometry">
@@ -854,6 +890,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="text">
         <string>이체</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -869,6 +908,38 @@ li.checked::marker { content: &quot;\2612&quot;; }
      </property>
      <property name="text">
       <string>w_service</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_logout">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>10</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>로그아웃</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_exit">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>10</y>
+       <width>141</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>종료</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
@@ -887,6 +958,42 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <zorder>textBrowser</zorder>
   <zorder>selectLoginService</zorder>
  </widget>
+ <tabstops>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>background</tabstop>
+  <tabstop>input_loginId</tabstop>
+  <tabstop>input_loginPw</tabstop>
+  <tabstop>btn_login</tabstop>
+  <tabstop>btn_loginToSignup</tabstop>
+  <tabstop>input_signupId</tabstop>
+  <tabstop>input_signupPw</tabstop>
+  <tabstop>btn_signup</tabstop>
+  <tabstop>selectService</tabstop>
+  <tabstop>info_makeAccount</tabstop>
+  <tabstop>input_initMoney</tabstop>
+  <tabstop>input_makeAccountPw</tabstop>
+  <tabstop>btn_makeAccount</tabstop>
+  <tabstop>info_checkAccount</tabstop>
+  <tabstop>btn_checkAccount</tabstop>
+  <tabstop>info_depositAccountList</tabstop>
+  <tabstop>btn_depositAccountList</tabstop>
+  <tabstop>input_depositAccount</tabstop>
+  <tabstop>input_depositMoney</tabstop>
+  <tabstop>btn_deposit</tabstop>
+  <tabstop>info_withdrawAccountList</tabstop>
+  <tabstop>btn_withdrawAccountList</tabstop>
+  <tabstop>input_withdrawAccount</tabstop>
+  <tabstop>input_withdrawMoney</tabstop>
+  <tabstop>input_withdrawPw</tabstop>
+  <tabstop>btn_withdraw</tabstop>
+  <tabstop>info_transferAccountList</tabstop>
+  <tabstop>btn_transferAccountList</tabstop>
+  <tabstop>input_transferFromAccount</tabstop>
+  <tabstop>input_transferPw</tabstop>
+  <tabstop>input_transferMoney</tabstop>
+  <tabstop>input_transferToAccount</tabstop>
+  <tabstop>btn_transfer</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
