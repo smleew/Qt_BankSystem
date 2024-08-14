@@ -2,7 +2,14 @@
 Qt와 C++을 이용하여 회원가입, 로그인, 계좌 개설, 조회, 입출금, 이체 기능을 구현한 프로그램입니다.
 
 ## 메뉴얼
-* 한국어 메뉴얼과 영어 메뉴얼을 선택해서 볼 수 있습니다. 단, 파일 입출력을 요하기에 절대경로 지정이 필요합니다. 절대경로는 fileManager.cpp파일에서 수정할 수 있습니다.
+* 한국어 메뉴얼과 영어 메뉴얼을 선택해서 볼 수 있습니다.
+
+* 단, 파일 입출력을 요하기에 절대경로 지정이 필요합니다. 절대경로는 fileManager.cpp파일에서 수정할 수 있습니다.
+
+![image](https://github.com/user-attachments/assets/93d1d17c-f5dd-4139-b2d4-663ba3b5637b)
+![image](https://github.com/user-attachments/assets/0871cc18-d99a-4ab4-a3e6-01dc6194c460)
+![image](https://github.com/user-attachments/assets/d6f95f5c-46ce-4648-ae95-86708cedf4bc)
+
 
 ## 로그인
 * 아이디와 사용자암호를 입력하여 로그인을 진행합니다.
