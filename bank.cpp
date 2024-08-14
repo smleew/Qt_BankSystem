@@ -168,8 +168,18 @@ void Bank::btnCheckAccount() {
     ui->info_checkAccount->setPlainText(info);
 }
 void Bank::btnDeposit() {
-    LL account = ui->input_depositAccount->text().toLongLong();
-    LL money = ui->input_depositMoney->text().toLongLong();
+    bool success;
+    LL money = ui->input_depositMoney->text().toLongLong(&success);
+    if(!success) {
+        ui->info_depositAccountList->setPlainText("잘못된 입금 금액입니다. 다시 입력해주세요.");
+        return;
+    }
+
+    LL account = ui->input_depositAccount->text().toLongLong(&success);
+    if(!success) {
+        ui->info_depositAccountList->setPlainText("잘못된 계좌번호입니다. 다시 입력해주세요.");
+        return;
+    }
     account--;
 
     QString info;
@@ -214,8 +224,14 @@ void Bank::btnDepositAccountList() {
 void Bank::btnMakeAccount() {
     QString initMoney = ui->input_initMoney->text();
     QString pw = ui->input_makeAccountPw->text();
+    bool success;
 
-    long long input = initMoney.toLongLong();
+    long long input = initMoney.toLongLong(&success);
+    if(!success) {
+        ui->info_makeAccount->setPlainText("잘못된 입금 금액입니다. 다시 입력해주세요.");
+        return;
+    }
+
     long long id = 0;
 
     random_device rd;
@@ -238,8 +254,19 @@ void Bank::btnMakeAccount() {
 
 
 void Bank::btnWithdraw() {
-    LL account = ui->input_withdrawAccount->text().toLongLong();
-    LL money = ui->input_withdrawMoney->text().toLongLong();
+    bool success;
+    LL account = ui->input_withdrawAccount->text().toLongLong(&success);
+    if(!success) {
+        ui->info_withdrawAccountList->setPlainText("잘못된 계좌번호입니다. 다시 입력해주세요.");
+        return;
+    }
+
+    LL money = ui->input_withdrawMoney->text().toLongLong(&success);
+    if(!success) {
+        ui->info_withdrawAccountList->setPlainText("잘못된 금액입니다. 다시 입력해주세요.");
+        return;
+    }
+
     QString pw = ui->input_withdrawPw->text();
     account--;
 
@@ -307,9 +334,25 @@ void Bank::btnTransferAccountList() {
 
 
 void Bank::btnTransfer() {
-    LL account = ui->input_transferFromAccount->text().toLongLong();
-    LL dest = ui->input_transferToAccount->text().toLongLong();
-    LL money = ui->input_transferMoney->text().toLongLong();
+    bool success;
+    LL account = ui->input_transferFromAccount->text().toLongLong(&success);
+    if(!success) {
+        ui->info_transferAccountList->setPlainText("잘못된 내 계좌번호입니다. 다시 입력해주세요.");
+        return;
+    }
+
+    LL dest = ui->input_transferToAccount->text().toLongLong(&success);
+    if(!success) {
+        ui->info_transferAccountList->setPlainText("잘못된 상대 계좌번호입니다. 다시 입력해주세요.");
+        return;
+    }
+
+    LL money = ui->input_transferMoney->text().toLongLong(&success);
+    if(!success) {
+        ui->info_transferAccountList->setPlainText("잘못된 송금액입니다. 다시 입력해주세요.");
+        return;
+    }
+
     QString pw = ui->input_transferPw->text();
     account--;
 
@@ -332,16 +375,20 @@ void Bank::btnTransfer() {
     else if (money > CUR_ACC[account].getBalance()) {
         info = "* 잔액을 초과하여 이체할 수 없습니다. *\n";
         info.append("현재 잔액 : %1");
-        info.arg(QString::number(CUR_ACC[account].getBalance()));
+        info = info.arg(QString::number(CUR_ACC[account].getBalance()));
     }
     else {
         CUR_ACC[account].subBalance(money);
         (*idToAccPtr[dest]).addBalance(money);
         info = "계좌번호 %1로 이체가 완료되었습니다.\n현재 잔액 : %2";
-        info.arg(QString::number(dest)).arg(QString::number(CUR_ACC[account].getBalance()));
+        info = info.arg(QString::number(dest)).arg(QString::number(CUR_ACC[account].getBalance()));
+        ui->info_transferAccountList->setPlainText(info);
+
+        ui->input_transferPw->clear();
         ui->input_transferFromAccount->clear();
         ui->input_transferToAccount->clear();
         ui->input_transferMoney->clear();
+        return;
     }
     ui->info_transferAccountList->setPlainText(info);
 }
