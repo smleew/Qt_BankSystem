@@ -6,9 +6,9 @@ Qt와 C++을 이용하여 회원가입, 로그인, 계좌 개설, 조회, 입출
 
 * 단, 파일 입출력을 요하기에 절대경로 지정이 필요합니다. 절대경로는 fileManager.cpp파일에서 수정할 수 있습니다.
 
-![image](https://github.com/user-attachments/assets/93d1d17c-f5dd-4139-b2d4-663ba3b5637b)
 ![image](https://github.com/user-attachments/assets/0871cc18-d99a-4ab4-a3e6-01dc6194c460)
 ![image](https://github.com/user-attachments/assets/d6f95f5c-46ce-4648-ae95-86708cedf4bc)
+![image](https://github.com/user-attachments/assets/93d1d17c-f5dd-4139-b2d4-663ba3b5637b)
 
 
 ## 로그인
