@@ -1,19 +1,26 @@
 #include "fileManager.h"
 #include <QApplication>
+#include <QDir> // 디버깅용
 
 //파일의 내용 출력
-void FileManager::printManual(const QString& fileName)
+QString FileManager::printManual(const QString& fileName)
 {
+    QDir::setCurrent("C:/Users/change30/Desktop/Qt/Qt_BankSystem"); // 절대경로 지정 필요
+    QString result = "";
     QFile file(fileName);
+    if (!file.exists()) {
+        return QDir::currentPath();
+    }
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        // cout << "파일 열기 실패" << endl;
-        return;
+        result = "파일 열기 실패";
+        return result;
     }
     QTextStream in(&file);
     while (!in.atEnd()) {
         QString line = in.readLine();
-        // 한 줄씩 읽어서 처리
-        qDebug() << line;
+        result.append("\n");
+        result.append(line);
     }
     file.close();
+    return result;
 }

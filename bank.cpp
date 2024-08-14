@@ -16,6 +16,8 @@ Bank::Bank(QWidget *parent)
     ui->selectLoginService->setCurrentIndex(0);
     ui->selectLoginSignup->setCurrentIndex(0);
     users.emplace_back(User("Init", "0000"));
+
+    fm = FileManager();
 }
 
 Bank::~Bank()
@@ -45,6 +47,10 @@ void Bank::linkButtons() {
     connect(ui->btn_exit1, SIGNAL(clicked()), this, SLOT(btnExit()));
     connect(ui->btn_exit2, SIGNAL(clicked()), this, SLOT(btnExit()));
     connect(ui->btn_logout, SIGNAL(clicked()), this, SLOT(btnLogOut()));
+
+    connect(ui->btn_korManual, SIGNAL(clicked()), this, SLOT(btnShowKorManual()));
+    connect(ui->btn_engManual, SIGNAL(clicked()), this, SLOT(btnShowEngManual()));
+
 }
 
 void Bank::clearServiceInfo() {
@@ -82,7 +88,7 @@ void Bank::btnLogOut() {
 void Bank::btnExit() {
     QMessageBox::information(this, "프로그램 종료", "프로그램이 종료되었습니다.",
                              QMessageBox::Ok);
-    this->deleteLater();
+    QApplication::exit(0);
 }
 
 void Bank::btnCancelSignUp() {
@@ -111,6 +117,14 @@ void Bank::btnOpenSignUp() {
 void Bank::btnSignUp() {
     QString id = ui->input_signupId->text();
     QString pw = ui->input_signupPw->text();
+    if(id == "") {
+        QMessageBox::warning(this, "ID 입력 오류", "현재 ID가 입력되지 않았습니다. ID를 입력해주세요.");
+        return;
+    }
+    if(pw == "") {
+        QMessageBox::warning(this, "비밀번호 입력 오류", "현재 비밀번호가 입력되지 않았습니다. 비밀번호를 입력해주세요.");
+        return;
+    }
     if (idToIdx.find(id) != idToIdx.end()) {
         QMessageBox::warning(this, "ID 중복", "이미 존재하는 ID입니다.\n다른 ID를 입력해주세요.");
         return;
@@ -119,6 +133,7 @@ void Bank::btnSignUp() {
     users.emplace_back(User(id, pw));
     QMessageBox::information(this, "회원가입 완료", "회원가입이 완료되었습니다. 로그인을 시도해주세요.",
                              QMessageBox::Ok);
+
     btnCancelSignUp();
     return;
 }
@@ -408,3 +423,16 @@ void Bank::btnTransfer() {
     }
     ui->info_transferAccountList->setPlainText(info);
 }
+
+void Bank::btnShowKorManual() {
+    QString manual = fm.printManual("korManual.txt");
+    QMessageBox::information(nullptr, "한국어 메뉴얼", manual);
+    return;
+}
+
+void Bank::btnShowEngManual() {
+    QString manual = fm.printManual("engManual.txt");
+    QMessageBox::information(nullptr, "English Manual", manual);
+    return;
+}
+

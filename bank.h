@@ -4,6 +4,7 @@
 #include <QString>
 #include <QVector>
 #include <QMessageBox>
+#include "fileManager.h"
 #include "user.h"
 using namespace std;
 
@@ -33,6 +34,7 @@ private:
     QMap<long long, Account*> idToAccPtr;
     QVector<User> users;
     int curUserIdx = 0;
+    FileManager fm;
 
     /* 함수 모음 */
     void loginSystem(); // 로그인 시스템
@@ -64,5 +66,9 @@ public slots:
     void btnCancelSignUp();
     void btnLogOut();
     void btnExit();
+
+    void btnShowKorManual();
+    void btnShowEngManual();
+
 };
 #endif // BANK_H

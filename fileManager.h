@@ -11,6 +11,6 @@ private:
 public:
 	FileManager() {};
 	~FileManager() {};
-    void printManual(const QString& fileName);
+    QString printManual(const QString& fileName);
 };
 #endif
