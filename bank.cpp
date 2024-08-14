@@ -174,6 +174,10 @@ void Bank::btnDeposit() {
         ui->info_depositAccountList->setPlainText("잘못된 입금 금액입니다. 다시 입력해주세요.");
         return;
     }
+    if(money < 0) {
+        ui->info_depositAccountList->setPlainText("잘못된 입금 금액입니다. 다시 입력해주세요.");
+        return;
+    }
 
     LL account = ui->input_depositAccount->text().toLongLong(&success);
     if(!success) {
@@ -231,6 +235,10 @@ void Bank::btnMakeAccount() {
         ui->info_makeAccount->setPlainText("잘못된 입금 금액입니다. 다시 입력해주세요.");
         return;
     }
+    if(input < 0) {
+        ui->info_makeAccount->setPlainText("잘못된 입금 금액입니다. 다시 입력해주세요.");
+        return;
+    }
 
     long long id = 0;
 
@@ -263,6 +271,10 @@ void Bank::btnWithdraw() {
 
     LL money = ui->input_withdrawMoney->text().toLongLong(&success);
     if(!success) {
+        ui->info_withdrawAccountList->setPlainText("잘못된 금액입니다. 다시 입력해주세요.");
+        return;
+    }
+    if(money < 0) {
         ui->info_withdrawAccountList->setPlainText("잘못된 금액입니다. 다시 입력해주세요.");
         return;
     }
@@ -349,6 +361,10 @@ void Bank::btnTransfer() {
 
     LL money = ui->input_transferMoney->text().toLongLong(&success);
     if(!success) {
+        ui->info_transferAccountList->setPlainText("잘못된 송금액입니다. 다시 입력해주세요.");
+        return;
+    }
+    if(money < 0) {
         ui->info_transferAccountList->setPlainText("잘못된 송금액입니다. 다시 입력해주세요.");
         return;
     }

@@ -139,6 +139,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string>로그인</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QPushButton" name="btn_loginToSignup">
        <property name="geometry">
@@ -151,6 +154,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="text">
         <string>회원가입</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLabel" name="label_9">
@@ -273,6 +279,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <property name="text">
         <string>회원가입</string>
        </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QPushButton" name="btn_cancelSignup">
        <property name="geometry">
@@ -285,6 +294,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </property>
        <property name="text">
         <string>뒤로가기</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -996,13 +1008,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
  <tabstops>
   <tabstop>textBrowser</tabstop>
   <tabstop>background</tabstop>
+  <tabstop>input_signupId</tabstop>
+  <tabstop>input_signupPw</tabstop>
+  <tabstop>btn_signup</tabstop>
+  <tabstop>btn_cancelSignup</tabstop>
   <tabstop>input_loginId</tabstop>
   <tabstop>input_loginPw</tabstop>
   <tabstop>btn_login</tabstop>
   <tabstop>btn_loginToSignup</tabstop>
-  <tabstop>input_signupId</tabstop>
-  <tabstop>input_signupPw</tabstop>
-  <tabstop>btn_signup</tabstop>
+  <tabstop>btn_exit1</tabstop>
   <tabstop>selectService</tabstop>
   <tabstop>info_makeAccount</tabstop>
   <tabstop>input_initMoney</tabstop>
@@ -1028,6 +1042,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <tabstop>input_transferMoney</tabstop>
   <tabstop>input_transferToAccount</tabstop>
   <tabstop>btn_transfer</tabstop>
+  <tabstop>btn_logout</tabstop>
+  <tabstop>btn_exit2</tabstop>
  </tabstops>
  <resources/>
  <connections/>
