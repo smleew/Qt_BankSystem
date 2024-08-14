@@ -38,6 +38,9 @@ private:
     void loginSystem(); // 로그인 시스템
     bool checkCurUser(const QString& id, const QString& pw); // 현재 유저 확인
     void linkButtons();
+    void clearServiceInfo();
+    void clearServiceInput();
+
 
 public slots:
     void btnCheckAccount();

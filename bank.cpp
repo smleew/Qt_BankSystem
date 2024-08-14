@@ -47,21 +47,47 @@ void Bank::linkButtons() {
     connect(ui->btn_logout, SIGNAL(clicked()), this, SLOT(btnLogOut()));
 }
 
+void Bank::clearServiceInfo() {
+    ui->info_checkAccount->clear();
+    ui->info_depositAccountList->clear();
+    ui->info_makeAccount->clear();
+    ui->info_transferAccountList->clear();
+    ui->info_withdrawAccountList->clear();
+}
+
+void Bank::clearServiceInput() {
+    ui->input_depositAccount->clear();
+    ui->input_depositMoney->clear();
+    ui->input_initMoney->clear();
+    ui->input_makeAccountPw->clear();
+    ui->input_transferFromAccount->clear();
+    ui->input_transferMoney->clear();
+    ui->input_transferPw->clear();
+    ui->input_transferToAccount->clear();
+    ui->input_withdrawAccount->clear();
+    ui->input_withdrawMoney->clear();
+    ui->input_withdrawPw->clear();
+}
+
+
 void Bank::btnLogOut() {
     curUserIdx = 0;
     QMessageBox::information(this, "로그아웃 완료", "로그아웃이 완료되었습니다. 로그인을 시도해주세요.",
                              QMessageBox::Ok);
-    ui->selectLoginService->setCurrentIndex(0);
+    clearServiceInfo();
+    clearServiceInput();
+    ui->selectLoginService->setCurrentIndex(0);    
 }
 
 void Bank::btnExit() {
     QMessageBox::information(this, "프로그램 종료", "프로그램이 종료되었습니다.",
                              QMessageBox::Ok);
-    // 종료
-    delete this;
+    this->deleteLater();
 }
 
 void Bank::btnCancelSignUp() {
+    ui->input_signupId->clear();
+    ui->input_signupPw->clear();
     ui->selectLoginSignup->setCurrentIndex(0);
 }
 
@@ -76,6 +102,8 @@ bool Bank::checkCurUser(const QString& id, const QString& pw) {
 }
 
 void Bank::btnOpenSignUp() {
+    ui->input_loginId->clear();
+    ui->input_loginPw->clear();
     ui->selectLoginSignup->setCurrentIndex(1);
 }
 
@@ -91,9 +119,7 @@ void Bank::btnSignUp() {
     users.emplace_back(User(id, pw));
     QMessageBox::information(this, "회원가입 완료", "회원가입이 완료되었습니다. 로그인을 시도해주세요.",
                              QMessageBox::Ok);
-    ui->selectLoginSignup->setCurrentIndex(0);
-    ui->input_signupId->text() = "";
-    ui->input_signupPw->text() = "";
+    btnCancelSignUp();
     return;
 }
 
@@ -113,7 +139,10 @@ void Bank::btnSignIn() {
     QMessageBox::information(this, "로그인 성공", "로그인에 성공했습니다!",
                              QMessageBox::Ok);
     curUserIdx = idToIdx[id];
+    ui->input_loginId->clear();
+    ui->input_loginPw->clear();
     ui->selectLoginService->setCurrentIndex(1);
+    ui->selectService->setCurrentIndex(0);
 
     return;
 }
@@ -154,6 +183,8 @@ void Bank::btnDeposit() {
     else {
         info = "입금에 실패했습니다.";
     }
+    ui->input_depositAccount->clear();
+    ui->input_depositMoney->clear();
     ui->info_depositAccountList->setPlainText(info);
 }
 
@@ -200,6 +231,8 @@ void Bank::btnMakeAccount() {
     idToAccPtr[id] = &(CUR_ACC.back());
     QString tmp = "[계좌 개설 완료]\n계좌번호: %1\n잔액: %2원\n비밀번호: %3\n";
     tmp = tmp.arg(QString::number(id)).arg(initMoney).arg(pw);
+    ui->input_makeAccountPw->clear();
+    ui->input_initMoney->clear();
     ui->info_makeAccount->setPlainText(tmp);
 }
 
@@ -281,7 +314,7 @@ void Bank::btnTransfer() {
     account--;
 
     QString info;
-    if(account < 0 || account < CUR_ACC.size()) {
+    if(account < 0 || account > CUR_ACC.size()) {
         info = "잘못된 계좌입니다. 다시 선택해주세요.";
     }
     else if(CUR_ACC[account].getPw() != pw) {
@@ -304,9 +337,11 @@ void Bank::btnTransfer() {
     else {
         CUR_ACC[account].subBalance(money);
         (*idToAccPtr[dest]).addBalance(money);
-        info = "계좌번호 %1로 이체가 완료되었습니다.\n";
-        info.append("현재 잔액: %2");
+        info = "계좌번호 %1로 이체가 완료되었습니다.\n현재 잔액 : %2";
         info.arg(QString::number(dest)).arg(QString::number(CUR_ACC[account].getBalance()));
+        ui->input_transferFromAccount->clear();
+        ui->input_transferToAccount->clear();
+        ui->input_transferMoney->clear();
     }
     ui->info_transferAccountList->setPlainText(info);
 }
